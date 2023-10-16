@@ -8,9 +8,12 @@ function Homepage() {
     return (
     <Container>
         <Flex>
-        <Box flex="1" p="4">Section 1</Box>
-        <Box flex="1" p="4">Section 2</Box>
-        <Box flex="1" p="4">Section 3</Box>
+        <Box flex="1" p="4">Homepage</Box>
+        <Box flex="1" p="4">About Us</Box>
+        <Box flex="1" p="4">Resources</Box>
+        <Box flex="1" p="4">Sponsors</Box>
+        <Box flex="1" p="4">Team Portal</Box>
+        <Box flex="1" p="4">Venue Map</Box>
         </Flex>
     </Container>
     )
