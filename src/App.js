@@ -3,38 +3,37 @@ import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import * as React from 'react'
 import { Container } from '@chakra-ui/react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Homepage from './pages/Homepage';
+import AboutUs from './pages/AboutUs';
+import Resources from './pages/Resources';
+import Sponsors from './pages/Sponsors';
+import VenueMap from './pages/VenueMap';
+import TeamPortal from './pages/TeamPortal';
 
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload hobjb.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+
 
 function App() {
-  // 2. Wrap ChakraProvider at the root of your app
+  // Wrap ChakraProvider at the root of the app and sets up routing
   return (
-    <ChakraProvider>
-      <Container>
-      ur mom a hoe
-    </Container>
-      
-    </ChakraProvider>
+    <div className='App'>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage/> }/>
+          <Route path="/about" element={<AboutUs/> }/>
+          <Route path="/resources" element={<Resources/> }/>
+          <Route path="/sponsors" element={<Sponsors/> }/>
+          <Route path="/map" element={<VenueMap/> }/>
+          <Route path="/teamportal" element={<TeamPortal/> }/>
+          <Route path="/app" element ={App} />
+          <Route path="*" element={<Navigate to="/" replace />}
+          />
+        </Routes>
+    </Router>
+
+    </div>
+
   )
 }
 
