@@ -17,22 +17,23 @@ import TeamPortal from './pages/TeamPortal';
 function App() {
   // Wrap ChakraProvider at the root of the app and sets up routing
   return (
-    <div className='App'>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Homepage/> }/>
-          <Route path="/about" element={<AboutUs/> }/>
-          <Route path="/resources" element={<Resources/> }/>
-          <Route path="/sponsors" element={<Sponsors/> }/>
-          <Route path="/map" element={<VenueMap/> }/>
-          <Route path="/teamportal" element={<TeamPortal/> }/>
-          <Route path="/app" element ={App} />
-          <Route path="*" element={<Navigate to="/" replace />}
-          />
-        </Routes>
-    </Router>
-
-    </div>
+    <ChakraProvider>
+      <div className='App'>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Homepage/> }/>
+            <Route path="/about" element={<AboutUs/> }/>
+            <Route path="/resources" element={<Resources/> }/>
+            <Route path="/sponsors" element={<Sponsors/> }/>
+            <Route path="/map" element={<VenueMap/> }/>
+            <Route path="/teamportal" element={<TeamPortal/> }/>
+            <Route path="/app" element ={App} />
+            <Route path="*" element={<Navigate to="/" replace />}
+            />
+          </Routes>
+      </Router>
+      </div>
+    </ChakraProvider>
 
   )
 }
