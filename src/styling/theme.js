@@ -1,10 +1,11 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Global, css } from "@emotion/react";
 
+
 const customTheme = extendTheme({
     fonts: {
-      body: "Raleway, sans-serif", // Change this to your desired font
-      heading: "Bebas_Neue, sans-serif", // Change this to your desired font
+      body: "sigmar-one, sans-serif", // Change this to your desired font
+      heading: "Raleway, sans-serif" // Change this to your desired font
     },
   });
 

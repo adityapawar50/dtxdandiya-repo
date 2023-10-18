@@ -1,22 +1,26 @@
 import React from 'react';
-import { Flex, Text, Icon, Box } from '@chakra-ui/react';
+import { Flex, Text, Icon, Box, Heading, Button, Spacer, HStack, Center } from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import { palette } from '../styling/theme';
 import pic from '../logo.svg'
+import dtxlogo from '../pics/dtxlogo.png'
+import MenuButton from './menuButton';
+
 
 
 const Header = () => {
     return (
-      <Flex
-        as="header"
-        align="center"
-        justify="space-between"
-        p="4"
-        bg={palette.dtxGreen}
-        color={palette.dtxBrown}
-      >
-        <Icon as={pic} boxSize={8} />
-        <Text fontSize="xl">Your Big Title</Text>
-        <img src="../pics/dtxlogo.png" alt="Logo" width="50" height="50" />
+      <Flex 
+      align="center" 
+      p={4}
+      as="header"
+      bg={palette.dtxGreen}
+      color={palette.dtxBrown}>
+        <MenuButton/>
+        <Center flex="1">
+          <Heading size="3xl" fontWeight="bold" textAlign="center" ml="-60px">DTX Dandiya</Heading>
+          <img src = {dtxlogo} alt="Logo" width="100" height="100" />
+        </Center>
       </Flex>
     );
   };

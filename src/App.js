@@ -13,6 +13,8 @@ import VenueMap from './pages/VenueMap';
 import TeamPortal from './pages/TeamPortal';
 import '@fontsource/raleway/900.css'
 import '@fontsource/bebas-neue/400.css'
+import '@fontsource/sigmar-one/400.css'
+
 
 
 
