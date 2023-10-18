@@ -1,6 +1,6 @@
 import React from 'react';
 import { Flex, Text, Icon, Box } from '@chakra-ui/react';
-import { palette } from '../themeColors';
+import { palette } from '../styling/theme';
 import pic from '../logo.svg'
 
 
@@ -11,8 +11,8 @@ const Header = () => {
         align="center"
         justify="space-between"
         p="4"
-        bg="green"
-        color="white"
+        bg={palette.dtxGreen}
+        color={palette.dtxBrown}
       >
         <Icon as={pic} boxSize={8} />
         <Text fontSize="xl">Your Big Title</Text>
