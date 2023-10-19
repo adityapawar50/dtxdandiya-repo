@@ -4,7 +4,7 @@ import { palette } from '../styling/theme';
 
 const MenuButton = () => {
     return (
-      <Button leftIcon={<HamburgerIcon />} bg={palette.dtxBrown} color = {palette.dtxGold} variant="solid" size = "lg">
+      <Button leftIcon={<HamburgerIcon />} bg={palette.dtxBrown} color = {palette.dtxGold} rounded={'full'} size = "lg">
         Menu
       </Button>
     );

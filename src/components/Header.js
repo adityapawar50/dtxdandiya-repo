@@ -4,7 +4,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { palette } from '../styling/theme';
 import pic from '../logo.svg'
 import dtxlogo from '../pics/dtxlogo.png'
-import MenuButton from './menuButton';
+import MenuButton from './MenuButton';
 
 
 
