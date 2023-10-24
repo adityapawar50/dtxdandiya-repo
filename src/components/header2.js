@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Button } from "@chakra-ui/react";
+import { Box, Flex, Heading, Button, Text } from "@chakra-ui/react";
 import { palette } from '../styling/theme';
 import dtxlogo from '../pics/dtxlogo.png'
 
@@ -16,36 +16,35 @@ const header2 = () => {
     >
       <Flex align="center" justify="space-between">
         <Flex align="center">
-          <Box mr="4" h="100%" w = "50px">
+          <Box mr="4" h="100%" w = "70px">
             <img src={dtxlogo} alt="Logo" h="15px" w = "10px" />
           </Box>
-          <Heading as="h1" size="md">
+          <Heading as="h1" size="md" color = {palette.dtxGold}>
             DTX Dandiya
           </Heading>
         
 
         </Flex>
         <Flex align="center" justify="center" flex="1" ml="-200px">
-          <Button colorScheme="whiteAlpha" mx="1"> {/* Added mx="1" for margin */}
+          <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
             Home
           </Button>
-          <Button colorScheme="whiteAlpha" mx="1">
+          <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
             About Us 
           </Button>
-          <Button colorScheme="whiteAlpha" mx="1">
-            Resources
+          <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
+              Resources
           </Button>
-          <Button colorScheme="whiteAlpha" mx="1">
+          <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
             Sponsors
           </Button>
-          <Button colorScheme="whiteAlpha" mx="1">
+          <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
             Team Portal
           </Button>
-          <Button colorScheme="whiteAlpha" mx="1">
+          <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
             Venue Map
           </Button>
         </Flex>
-        <Flex></Flex>
       </Flex>
     </Box>
   );
