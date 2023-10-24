@@ -17,7 +17,7 @@ const customTheme = extendTheme({
     celadon: "#ACE1AF",
     fern: "#71BC78",
     bruns: "#1B4D3E",
-    dtxGreen : "#81B091",
+    dtxGreen : "#647B54",
     dtxBrown : "#986859",
     dtxGold : "#CCA176"
 }
