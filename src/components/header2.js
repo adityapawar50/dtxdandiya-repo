@@ -27,13 +27,22 @@ const header2 = () => {
         </Flex>
         <Flex align="center" justify="center" flex="1" ml="-200px">
           <Button colorScheme="whiteAlpha" mx="1"> {/* Added mx="1" for margin */}
-            Page 1
+            Home
           </Button>
           <Button colorScheme="whiteAlpha" mx="1">
-            Page 2
+            About Us 
           </Button>
           <Button colorScheme="whiteAlpha" mx="1">
-            Page 3
+            Resources
+          </Button>
+          <Button colorScheme="whiteAlpha" mx="1">
+            Sponsors
+          </Button>
+          <Button colorScheme="whiteAlpha" mx="1">
+            Team Portal
+          </Button>
+          <Button colorScheme="whiteAlpha" mx="1">
+            Venue Map
           </Button>
         </Flex>
         <Flex></Flex>
