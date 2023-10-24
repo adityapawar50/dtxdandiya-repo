@@ -7,7 +7,7 @@ const header2 = () => {
     <Box
       position="fixed"
       width="100%"
-      backgroundColor={palette.dtxGreen}
+      opacity = '100%'
       color="white"
       padding="4"
       zIndex="999"
