@@ -4,7 +4,7 @@ import { Global, css } from "@emotion/react";
 
 const customTheme = extendTheme({
     fonts: {
-      body: "sigmar-one, sans-serif", // Change this to your desired font
+      body: "Raleway, sans-serif", // Change this to your desired font
       heading: "Raleway, sans-serif" // Change this to your desired font
     },
   });
@@ -19,7 +19,8 @@ const customTheme = extendTheme({
     bruns: "#1B4D3E",
     dtxGreen : "#647B54",
     dtxBrown : "#986859",
-    dtxGold : "#CCA176"
+    dtxGold : "#CCA176",
+    bgDarkGreen: "#040c05"
 }
 
   export default customTheme

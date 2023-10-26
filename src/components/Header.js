@@ -1,29 +1,72 @@
-import React from 'react';
-import { Flex, Text, Icon, Box, Heading, Button, Spacer, HStack, Center } from '@chakra-ui/react';
+import { Box, Flex, Heading, Button, Text, HStack, Menu, MenuButton } from "@chakra-ui/react";
 import { palette } from '../styling/theme';
 import dtxlogo from '../pics/dtxlogo.png'
-import MenuButton from './MenuButton';
+import instaButton from "./InstaButton"
+import menuButton from './MenuButton'
+import { HamburgerIcon } from "@chakra-ui/icons";
+import instaIcon from "../pics/instagram.png"
+import * as React from 'react'
 
 
+const openInstagram = () => {
+  window.open("https://instagram.com", "_blank");
+};
 
-const Header = () => {
-    return (
-      <Flex 
-      align="center" 
-      p={4}
-      as="header"
-      bg={palette.dtxGreen}
-      color={palette.dtxBrown}
-      position = "fixed"
-      top = "0"
+const header = () => {
+  return (
+    <Box
+      position="fixed"
+      width="100%"
+      opacity = '100%'
+      color="white"
+      padding="4"
       zIndex="999"
-      width = "100%">
-        <Center flex="1">
-          <Heading size="3xl" fontWeight="bold" textAlign="center" ml="-60px">DTX Dandiya</Heading>
-          <img src = {dtxlogo} alt="Logo" width="100" height="100" />
-        </Center>
+      top="0"
+      h = '10%'
+    >
+      <Flex align="center" justify="space-between" w = "100%">
+      
+        <HStack spacing = "400px" w = "100%"> 
+
+          <Flex align="center" flex ="1">
+            <Box mr="4" h="100%" w = "70px">
+              <img src={dtxlogo} alt="Logo" h="15px" w = "10px" />
+            </Box>
+            <Heading as="h1" size="md" color = {palette.dtxGold}>
+              DTX Dandiya
+            </Heading>           
+          </Flex>
+
+          <HStack align="center" justify="center" flex="1">
+            <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
+              Home
+            </Button>
+            <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
+                Resources
+            </Button>
+            <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
+              Team Portal
+            </Button>
+            <Button colorScheme="transparent" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl">
+              Venue Map
+            </Button>
+          </HStack>
+
+
+          <Flex align="center" flex ="1">
+            <Box mr="4" h="50%" w = "50px">
+                <img src={instaIcon} alt="Logo" h="10px" w = "10px" onClick = {openInstagram}/>
+            </Box>
+           <Text>
+            Follow us
+           </Text>
+          </Flex>
+
+
+        </HStack>
       </Flex>
-    );
-  };
-  
-  export default Header;
+    </Box>
+  );
+};
+
+export default header;
