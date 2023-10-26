@@ -1,3 +1,6 @@
+Yo what's goodie. It's me Rishi (the greatest of all time, super hot/smart/incredible dancer/techwiz/etc.), and Aditya (Giants fan). 
+We made the website. I am an intern. Live, Love, Laugh Kanye. Ts ts. 
+__________________________________________________________________________________________________________________________________________
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
