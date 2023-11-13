@@ -7,6 +7,8 @@ import Header from '../components/Header'
 import { palette } from '../styling/theme'
 
 
+
+
 function Homepage() {
     return (
       <Box bg ={palette.bgDarkGreen}>
@@ -24,6 +26,7 @@ function Homepage() {
               <Box p="4">Sponsors</Box>
               <Box p="4">Team Portal</Box>
               <Box p="4">Venue Map</Box>
+              
             </VStack>
           </Flex>
         </VStack>  

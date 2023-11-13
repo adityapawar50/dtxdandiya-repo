@@ -7,6 +7,9 @@ const customTheme = extendTheme({
       body: "Raleway, sans-serif", // Change this to your desired font
       heading: "Raleway, sans-serif" // Change this to your desired font
     },
+    breakpoints:{
+      mobile: "1000px"
+    }
   });
 
   export const palette = {
