@@ -11,7 +11,7 @@ import { palette } from '../styling/theme'
 
 function Homepage() {
     return (
-      <Box bg ={palette.bgDarkGreen}>
+      <Box bg ={palette.bgDarkGreen}  w = "100vw">
         <VStack align="center" justify="center" spacing="10px">
           <Header />
           <Box>

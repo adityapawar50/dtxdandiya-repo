@@ -1,7 +1,9 @@
-import { Box, Flex, Heading,Button, IconButton, Text, HStack, Menu, MenuButton, Input } from "@chakra-ui/react";
+import { Box, Flex, Heading,Button, MenuItem,IconButton, Text, HStack, Menu, MenuButton, Input, VStack } from "@chakra-ui/react";
 import { palette } from '../styling/theme';
 import * as React from 'react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { Link as ChakraLink } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
 import {
     Drawer,
@@ -33,24 +35,46 @@ const MenuDrawer = () => {
 
         <Drawer
           isOpen={isOpen}
-          placement='left'
+          placement='right'
           onClose={onClose}
           finalFocusRef={btnRef}
+          size = "xs"
+          allowPinchZoom = 'true'
+          isFullHeight = "true"
         >
           <DrawerOverlay />
-          <DrawerContent>
+          <DrawerContent
+          bg = {palette.bgDarkGreen}
+          >
             <DrawerCloseButton />
-            <DrawerHeader>Create your account</DrawerHeader>
+            <DrawerHeader
+            color = {palette.dtxGold}
+            align = "stretch"
+            >Menu
+            </DrawerHeader>
   
             <DrawerBody>
-              <Input placeholder='Type here...' />
+              <VStack align = "stretch" spacing = {4}>
+                <ChakraLink as={RouterLink} to="/">
+                  <Button colorScheme="transparent" to="/" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl" mr = "auto">Home </Button>
+                </ChakraLink>
+                <ChakraLink as={RouterLink} to="/resources">
+                  <Button colorScheme="transparent" to="/" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl" mr = "auto">Resources </Button>
+                </ChakraLink>
+                <ChakraLink as={RouterLink} to="/teamportal">
+                  <Button colorScheme="transparent" to="/" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl" mr = "auto">Team Portal </Button>
+                </ChakraLink>
+                <ChakraLink as={RouterLink} to="/map">
+                  <Button colorScheme="transparent" to="/" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl" mr = "auto">Venue Map </Button>
+                </ChakraLink>
+            
+              </VStack>
             </DrawerBody>
   
             <DrawerFooter>
-              <Button variant='outline' mr={3} onClick={onClose}>
-                Cancel
+              <Button variant='solid' mr={3} bg ={palette.dtxGold} onClick={onClose}>
+                Close
               </Button>
-              <Button colorScheme='blue'>Save</Button>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
