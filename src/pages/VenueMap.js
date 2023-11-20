@@ -1,12 +1,11 @@
 import { Box, VStack, Container, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import HeroWithPic from '../components/Hero3';
-import Header2 from '../components/header2';
-import { palette } from '../styling/theme';
+import { palette } from '../styling/theme'
+
 
 function VenueMap() {
   const backgroundImageUrl = 'url("/pics/hero_3.png")';
-
   return (
     <Box
       position="relative"
@@ -33,8 +32,8 @@ function VenueMap() {
         zIndex={1}
         paddingTop="20px"
       >
-        <Text fontSize="x1" color = "white" textAlign="center">
-          Welcome to quite literally the greatest venue in the history of mankind any bad biddies hit my dms -NotRishi
+        <Text fontSize="50" color = "white" textAlign="center">
+          HAPPY BIRTHDAY RHEA ! ! ! ! ! ! ! ! ! 
         </Text>
 
     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: '50px' }}>
