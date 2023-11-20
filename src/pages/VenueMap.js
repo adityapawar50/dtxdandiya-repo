@@ -2,11 +2,13 @@ import { Box, VStack, Container, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import HeroWithPic from '../components/Hero3';
 import { palette } from '../styling/theme'
+import Header from '../components/Header'
 
 
 function VenueMap() {
   const backgroundImageUrl = 'url("/pics/hero_3.png")';
   return (
+    
     <Box
       position="relative"
       bg={backgroundImageUrl}
@@ -16,6 +18,7 @@ function VenueMap() {
     >
       {/* Background with HeroWithPic */}
       <VStack align="center" spacing="10px">
+      <Header/>
         <HeroWithPic />
       </VStack>
 

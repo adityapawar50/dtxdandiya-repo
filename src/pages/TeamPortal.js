@@ -1,11 +1,14 @@
-import { Flex, Box, Text, Heading, UnorderedList, ListItem } from '@chakra-ui/react';
+import { Flex, Box, Text, Heading, UnorderedList, ListItem, VStack } from '@chakra-ui/react';
 import hero_p3 from '../pics/hero_p3.png';
 import { palette } from '../styling/theme';
+import Header from '../components/Header'
 
-export default function HeroWithPic() {
+export default function TeamPortal() {
   const textColor = palette.white; // Set text color to white
 
   return (
+    <VStack>
+    <Header/>
     <Flex
       position="relative"
       bgImage={`url(${hero_p3})`}
@@ -15,6 +18,8 @@ export default function HeroWithPic() {
       w="100%"
       h="100vh"
     >
+        
+    
       {/* Section 1 */}
       <Box position="absolute" top="10%" left="50%" transform="translateX(-50%)" textAlign="center" color = "white">
         <Heading as="h1" size="lg" mb="2">
@@ -80,5 +85,6 @@ export default function HeroWithPic() {
         ></iframe>
       </Box>
     </Flex>
+    </VStack>
   );
 }

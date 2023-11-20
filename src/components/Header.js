@@ -101,7 +101,7 @@ const MenuLinks = ({ isOpen }) => {
 
         <MenuItem to="/" color = {palette.dtxGold} >Home</MenuItem>
         <MenuItem to="/resources" color = {palette.dtxGold}> Resources </MenuItem>
-        <MenuItem to="/teamportal" color = {palette.dtxGold}> Team Portal </MenuItem>
+        <MenuItem to="/portal" color = {palette.dtxGold}> Team Portal </MenuItem>
         <MenuItem to="/map" color = {palette.dtxGold}> Venue Map </MenuItem>
         <Flex isLast align="center" flex ="1">
                 <Box mr="4" h="50%" w = "30px">
