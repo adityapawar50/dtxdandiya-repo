@@ -31,7 +31,7 @@ function App() {
             <Route path="/resources" element={<Resources/> }/>
             <Route path="/sponsors" element={<Sponsors/> }/>
             <Route path="/map" element={<VenueMap/> }/>
-            <Route path="/teamportal" element={<TeamPortal/> }/>
+            <Route path="/portal" element={<TeamPortal/> }/>
             <Route path="/app" element ={App} />
             <Route path="*" element={<Navigate to="/" replace />}
             />
