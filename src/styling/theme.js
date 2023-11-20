@@ -4,9 +4,17 @@ import { Global, css } from "@emotion/react";
 
 const customTheme = extendTheme({
     fonts: {
-      body: "sigmar-one, sans-serif", // Change this to your desired font
+      body: "Raleway, sans-serif", // Change this to your desired font
       heading: "Raleway, sans-serif" // Change this to your desired font
     },
+    breakpoints:{
+      base: "0em", // 0px
+      sm: "30em", // ~480px. em is a relative unit and is dependant on the font-size.
+      md: "48em", // ~768px
+      lg: "62em", // ~992px
+      xl: "80em", // ~1280px
+      "2xl": "96em", // ~1536px
+    }
   });
 
   export const palette = {
@@ -19,7 +27,8 @@ const customTheme = extendTheme({
     bruns: "#1B4D3E",
     dtxGreen : "#647B54",
     dtxBrown : "#986859",
-    dtxGold : "#CCA176"
+    dtxGold : "#CCA176",
+    bgDarkGreen: "#040c05"
 }
 
   export default customTheme
