@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Box, Flex, Text, Button,MenuButton, Stack } from "@chakra-ui/react";
+import { Link, Box, Flex, Text, Stack } from "@chakra-ui/react";
 import { palette } from '../styling/theme';
 import dtxlogo from '../pics/dtxlogo.png'
 import instaIcon from "../pics/instagram.png"
@@ -42,29 +42,11 @@ const CloseIcon = () => (
   </svg>
 );
 
-const MenuIcon = () => (
-  <svg
-    width="24px"
-    viewBox="0 0 20 20"
-    xmlns="http://www.w3.org/2000/svg"
-    fill={palette.dtxGold}
-  >
-    <title>Menu</title>
-    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-  </svg>
-);
 
 const openInstagram = () => {
   window.open("https://www.instagram.com/dtx.dandiya/?hl=en", "_blank");
 };
 
-const MenuToggle = ({ toggle, isOpen }) => {
-  return (
-    <Box display={{ base: "block", md: "none" }} onClick={toggle}>
-      {isOpen ? <CloseIcon /> : <MenuIcon />}
-    </Box>
-  );
-};
 
 const DrawerToggle = ({ toggle, isOpen }) => {
   return (
