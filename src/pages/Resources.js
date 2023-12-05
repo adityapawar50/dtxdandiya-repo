@@ -4,7 +4,7 @@ import { Container } from '@chakra-ui/react'
 
 
 
-function Resources() {
+function Team1() {
     return (
     <Container>
         "hi"
@@ -12,4 +12,4 @@ function Resources() {
     )
   }
   
-  export default Resources;
+  export default Team1;
