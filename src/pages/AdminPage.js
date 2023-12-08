@@ -58,7 +58,7 @@ function AdminPage() {
         </Button>
 
         <Box mt={4}>
-          <Heading size="md">{process.env.REACT_APP_DTX_FIREBASE_MEASUREMENT_ID}:</Heading>
+          <Heading size="md">"ggober":</Heading>
           <ul>
             {data.map((item) => (
               <li key={item.id}>{item.value}</li>
