@@ -79,7 +79,7 @@ const AboutUs = () =>{
                             <Text py='2' color = {palette.dtxGold} w = "80%" justify = 'center'>
                                 Welcome to the heart of Dallas, where the vibrant rhythms of tradition meet the beats of unity
                                 at our annual Raas Garba competition. As a flagship event hosted by our college, this cultural 
-                                extravaganza is more than just a celebration; it's a spirited endeavor to bring our community together.
+                                extravaganza is more than just a celebration; it's a spirited endeavor to bring our community together yep.
             
                             </Text>
                         </VStack>
