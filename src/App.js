@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import * as React from 'react'
@@ -11,16 +10,16 @@ import Resources from './pages/Resources';
 import Sponsors from './pages/Sponsors';
 import VenueMap from './pages/VenueMap';
 import TeamPortal from './pages/TeamPortal';
+import AdminPage from './pages/AdminPage';
 import '@fontsource/raleway/900.css'
 import '@fontsource/bebas-neue/400.css'
 import '@fontsource/sigmar-one/400.css'
 
 
 
-
-
 function App() {
   // Wrap ChakraProvider at the root of the app and sets up routing
+
   return (
     <ChakraProvider theme ={customTheme}>
       <div className='App'>
@@ -32,6 +31,7 @@ function App() {
             <Route path="/sponsors" element={<Sponsors/> }/>
             <Route path="/map" element={<VenueMap/> }/>
             <Route path="/portal" element={<TeamPortal/> }/>
+            <Route path="/admin" element={<AdminPage/> }/>
             <Route path="/app" element ={App} />
             <Route path="*" element={<Navigate to="/" replace />}
             />
