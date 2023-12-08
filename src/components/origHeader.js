@@ -13,8 +13,6 @@ const openInstagram = () => {
 };
 
 
-
-
 const Header = () => {
 
   const [isMobile] = useMediaQuery("(max-width: 800px)")
