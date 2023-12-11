@@ -7,8 +7,10 @@ export default function TeamPortal() {
   const textColor = palette.white; // Set text color to white
 
   return (
-    <VStack>
-    <Header/>
+    <Box bg ={palette.bgDarkGreen}  w = "100vw">
+        <VStack align="center" justify="center" spacing="10px">
+          <Header />
+          
     <Flex
       position="relative"
       bgImage={`url(${hero_p3})`}
@@ -21,7 +23,7 @@ export default function TeamPortal() {
         
     
       {/* Section 1 */}
-      <Box position="absolute" top="10%" left="50%" transform="translateX(-50%)" textAlign="center" color = "white">
+      <Box position="absolute" top="10%" left="10%" transform="translateX(-50%)" textAlign="center" color = "white">
         <Heading as="h1" size="lg" mb="2">
           Timeline
         </Heading>
@@ -85,6 +87,7 @@ export default function TeamPortal() {
         ></iframe>
       </Box>
     </Flex>
-    </VStack>
+    </VStack>  
+    </Box>
   );
 }

@@ -1,17 +1,27 @@
 import React from "react";
-import { Link, Box, Flex, Text, Stack } from "@chakra-ui/react";
+import { Link, Box, Flex, Text, Button,MenuButton, Stack, Select, } from "@chakra-ui/react";
 import { palette } from '../styling/theme';
 import dtxlogo from '../pics/dtxlogo.png'
 import instaIcon from "../pics/instagram.png"
+import tiktokIcon from "../pics/tiktok.png"
 import MenuDrawer from "./MenuDrawer";
-import { Link as RouterLink } from "react-router-dom";
 
 
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [selectedTeam, setSelectedTeam] = React.useState("");
 
   const toggle = () => setIsOpen(!isOpen);
+  const handleTeamChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedTeam(selectedValue);
+  
+    // Navigate to the selected team page using window.location.href
+    if (selectedValue) {
+      window.location.href = selectedValue;
+    }
+  };
 
   return (
     <NavBarContainer 
@@ -27,9 +37,10 @@ const NavBar = (props) => {
       <Box mr="4%" w = "80px">
         <img src={dtxlogo} alt="Logo" h="10px" w = "10px" />
       </Box>
+
       {/* <MenuToggle toggle={toggle} isOpen={isOpen} /> */}
       <DrawerToggle  isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} />
+      <MenuLinks isOpen={isOpen} handleTeamChange={handleTeamChange} />
     </NavBarContainer>
   );
 };
@@ -47,6 +58,10 @@ const CloseIcon = () => (
 
 const openInstagram = () => {
   window.open("https://www.instagram.com/dtx.dandiya/?hl=en", "_blank");
+};
+
+const openTiktok = () => {
+  window.open("https://www.tiktok.com/@dtx.dandiya", "_blank");
 };
 
 
@@ -69,7 +84,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   );
 };
 
-const MenuLinks = ({ isOpen }) => {
+const MenuLinks = ({ isOpen, handleTeamChange }) => {
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -82,20 +97,47 @@ const MenuLinks = ({ isOpen }) => {
         direction={["column", "row", "row", "row"]}
         pt={[0, 0, 0, 0]}
       >
+        <MenuItem to="/" color={palette.dtxGold}>
+          Home
+        </MenuItem>
+        <MenuItem to="/resources" color={palette.dtxGold}>
+          Resources
+        </MenuItem>
 
-        <MenuItem to="/" color = {palette.dtxGold} >Home</MenuItem>
-        <MenuItem to="/resources" color = {palette.dtxGold}> Resources </MenuItem>
-        <MenuItem to="/portal" color = {palette.dtxGold}> Team Portal </MenuItem>
-        <MenuItem to="/map" color = {palette.dtxGold}> Venue Map </MenuItem>
-        <Flex isLast align="center" flex ="1">
-                <Box mr="4" h="50%" w = "30px">
-                    <img src={instaIcon} alt="Logo" h="10px" w = "10px" onClick = {openInstagram}/>
-                </Box>
+        {/* Always render the Select component */}
+        <Select
+          placeholder="Select Team"
+          onChange={(e) => handleTeamChange(e)}
+          w="200px" // Adjust the width as needed
+          color={palette.dtxGold}
+        >
+          <option value="/team1">Texas Raas</option>
+          <option value="/team2">GT Ramblin Raas</option>
+          <option value="/team3">Michigan Wolveraas</option>
+          <option value="/team4">Tamu Wreckin Raas</option>
+          <option value="/team5">WashU Raas</option>
+          <option value="/team6">UCB Raas Ramzat</option>
+          <option value="/team7">UW Raas</option>
+          {/* Add options for all teams */}
+        </Select>
+
+        <MenuItem to="/map" color={palette.dtxGold}>
+          Venue Map
+        </MenuItem>
+        <Flex isLast align="center" flex="1">
+          <Box mr="4" h="50%" w="30px">
+            <img src={instaIcon} alt="Logo" h="10px" w="10px" onClick={openInstagram} />
+          </Box>
+          <Box mr="4" h="50%" w="30px">
+            <img src={tiktokIcon} alt="Logo" h="10px" w="10px" onClick={openTiktok} />
+          </Box>
         </Flex>
       </Stack>
     </Box>
   );
 };
+
+
 
 const NavBarContainer = ({ children, ...props }) => {
   return (

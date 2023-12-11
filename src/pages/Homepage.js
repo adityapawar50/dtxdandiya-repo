@@ -1,7 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import * as React from 'react'
 import { Container, Box, Flex, VStack } from '@chakra-ui/react'
-
 import HeroWithPic from '../components/Hero'
 import MainSched from '../components/MainSchedule'
 import AboutUs from '../components/AboutUs'
