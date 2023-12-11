@@ -2,7 +2,7 @@ import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import * as React from 'react'
 import { Container } from '@chakra-ui/react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import customTheme from './styling/theme'
 import Homepage from './pages/Homepage';
 import AboutUs from './pages/AboutUs';
@@ -33,25 +33,25 @@ function App() {
     <ChakraProvider theme ={customTheme}>
       <div className='App'>
         <Router>
-        <Routes>
-  <Route path="/" element={<Homepage/>} />
-  <Route path="/about" element={<AboutUs/>} />
-  <Route path="/resources" element={<Resources/>} />
-  <Route path="/sponsors" element={<Sponsors/>} />
-  <Route path="/map" element={<VenueMap/>} />
-  <Route path="/teamportal" element={<TeamPortal/>} />
+          <Routes>
+            <Route path="/" element={<Homepage/>} />
+            <Route path="/about" element={<AboutUs/>} />
+            <Route path="/resources" element={<Resources/>} />
+            <Route path="/sponsors" element={<Sponsors/>} />
+            <Route path="/map" element={<VenueMap/>} />
+            <Route path="/teamportal" element={<TeamPortal/>} />
             <Route path="/admin" element={<AdminPage/> }/>
-  <Route path="/app" element={<App />} />
-  <Route path="*" element={<PageNotFound/>} />
-  <Route path ="/login" element={<Login/>} />
-  <Route path="/team1" element={<Team1/>} />
-  <Route path="/team2" element={<Team2/>} />
-  <Route path="/team3" element={<Team3/>} />
-  <Route path="/team4" element={<Team4/>} />
-  <Route path="/team5" element={<Team5/>} />
-  <Route path="/team6" element={<Team6/>} />
-  <Route path="/team7" element={<Team7/>} />
-</Routes>
+            <Route path="/app" element={<App />} />
+            <Route path="*" element={<PageNotFound/>} />
+            <Route path ="/login" element={<Login/>} />
+            <Route path="/team1" element={<Team1/>} />
+            <Route path="/team2" element={<Team2/>} />
+            <Route path="/team3" element={<Team3/>} />
+            <Route path="/team4" element={<Team4/>} />
+            <Route path="/team5" element={<Team5/>} />
+            <Route path="/team6" element={<Team6/>} />
+            <Route path="/team7" element={<Team7/>} />
+          </Routes>
       </Router>
       </div>
     </ChakraProvider>
