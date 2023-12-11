@@ -26,7 +26,7 @@ function Team3() {
               {/* First Section */}
               <Flex p="4" textDecoration="underline" marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
                 <Heading as="h2" size="lg" mb="2" color="white">
-                  Welcome Team 1!
+                  Welcome Michigan Wolveraas!
                 </Heading>
               </Flex>
 
@@ -46,9 +46,9 @@ function Team3() {
                                      ☎️Liason Contacts☎️
                          </Heading>
          <UnorderedList mt="2" color="white">
-          <ListItem>Name:000-000-0000</ListItem>
-         <ListItem>Name:000-000-0000</ListItem>
-        <ListItem>Name:000-000-0000</ListItem>
+          <ListItem>Amulya Rayasam: 972-523-6599</ListItem>
+         <ListItem> Siya Patel: 580-374-2404</ListItem>
+        <ListItem> Subhash Eedarapalli: 901-232-6813</ListItem>
          </UnorderedList>
              </Flex>
 

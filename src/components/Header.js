@@ -129,14 +129,13 @@ const MenuLinks = ({ isOpen, handleTeamChange }) => {
           w="200px" // Adjust the width as needed
           color={palette.dtxGold}
         >
-          <option value="/team1">Team 1</option>
-          <option value="/team2">Team 2</option>
-          <option value="/team3">Team 3</option>
-          <option value="/team4">Team 4</option>
-          <option value="/team5">Team 5</option>
-          <option value="/team6">Team 6</option>
-          <option value="/team7">Team 7</option>
-          <option value="/team8">Team 8</option>
+          <option value="/team1">Texas Raas</option>
+          <option value="/team2">GT Ramblin Raas</option>
+          <option value="/team3">Michigan Wolveraas</option>
+          <option value="/team4">Tamu Wreckin Raas</option>
+          <option value="/team5">WashU Raas</option>
+          <option value="/team6">UCB Raas Ramzat</option>
+          <option value="/team7">UW Raas</option>
           {/* Add options for all teams */}
         </Select>
 

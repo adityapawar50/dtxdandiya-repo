@@ -26,7 +26,7 @@ function Team4() {
               {/* First Section */}
               <Flex p="4" textDecoration="underline" marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
                 <Heading as="h2" size="lg" mb="2" color="white">
-                  Welcome Team 1!
+                  Welcome Tamu Wreckin Raas!
                 </Heading>
               </Flex>
 
@@ -46,9 +46,9 @@ function Team4() {
                                      ☎️Liason Contacts☎️
                          </Heading>
          <UnorderedList mt="2" color="white">
-          <ListItem>Name:000-000-0000</ListItem>
-         <ListItem>Name:000-000-0000</ListItem>
-        <ListItem>Name:000-000-0000</ListItem>
+          <ListItem>Aayushi Madiala: 512-773-0779</ListItem>
+         <ListItem>Sakshi Ratnaparkhi: 469-664-1877</ListItem>
+        <ListItem>Deva RajeevNair: 817-962-7661</ListItem>
          </UnorderedList>
              </Flex>
 

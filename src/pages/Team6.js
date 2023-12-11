@@ -26,7 +26,7 @@ function Team6() {
               {/* First Section */}
               <Flex p="4" textDecoration="underline" marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
                 <Heading as="h2" size="lg" mb="2" color="white">
-                  Welcome Team 1!
+                  Welcome UCB Raas Ramzat!
                 </Heading>
               </Flex>
 
@@ -46,9 +46,9 @@ function Team6() {
                                      ☎️Liason Contacts☎️
                          </Heading>
          <UnorderedList mt="2" color="white">
-          <ListItem>Name:000-000-0000</ListItem>
-         <ListItem>Name:000-000-0000</ListItem>
-        <ListItem>Name:000-000-0000</ListItem>
+         <ListItem>Kunj Patel: 469-826-7490</ListItem>
+         <ListItem> Hima Patel: 214-995-4423</ListItem>
+        <ListItem> Pankti Mevada: 469-690-7461</ListItem>
          </UnorderedList>
              </Flex>
 

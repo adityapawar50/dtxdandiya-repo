@@ -26,7 +26,7 @@ function Team1() {
                   {/* First Section */}
                   <Flex p="4" textDecoration="underline" marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
                     <Heading as="h2" size="lg" mb="2" color="white">
-                      Welcome Team 1!
+                      Welcome Texas Raas!
                     </Heading>
                   </Flex>
   
@@ -46,9 +46,9 @@ function Team1() {
                                          ☎️Liason Contacts☎️
                              </Heading>
              <UnorderedList mt="2" color="white">
-              <ListItem>Name:000-000-0000</ListItem>
-             <ListItem>Name:000-000-0000</ListItem>
-            <ListItem>Name:000-000-0000</ListItem>
+              <ListItem>Dhara Desai: 254-498-2257</ListItem>
+             <ListItem>Ahimsa Yukta: 832-323-3820</ListItem>
+            <ListItem>Shivan Golechha: 972-903-2550</ListItem>
              </UnorderedList>
                  </Flex>
 

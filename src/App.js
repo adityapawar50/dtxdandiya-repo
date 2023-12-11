@@ -12,6 +12,7 @@ import Sponsors from './pages/Sponsors';
 import VenueMap from './pages/VenueMap';
 import TeamPortal from './pages/TeamPortal';
 import PageNotFound from './pages/PageNotFound';
+import Login from './pages/Login';
 import Team1 from './pages/Team1';
 import Team2 from './pages/Team2';
 import Team3 from './pages/Team3';
@@ -19,7 +20,6 @@ import Team4 from './pages/Team4';
 import Team5 from './pages/Team5';
 import Team6 from './pages/Team6';
 import Team7 from './pages/Team7';
-import Team8 from './pages/Team8';
 import '@fontsource/raleway/900.css'
 import '@fontsource/bebas-neue/400.css'
 import '@fontsource/sigmar-one/400.css'
@@ -43,6 +43,7 @@ function App() {
   <Route path="/teamportal" element={<TeamPortal/>} />
   <Route path="/app" element={<App />} />
   <Route path="*" element={<PageNotFound/>} />
+  <Route path ="/login" element={<Login/>} />
   <Route path="/team1" element={<Team1/>} />
   <Route path="/team2" element={<Team2/>} />
   <Route path="/team3" element={<Team3/>} />
@@ -50,7 +51,6 @@ function App() {
   <Route path="/team5" element={<Team5/>} />
   <Route path="/team6" element={<Team6/>} />
   <Route path="/team7" element={<Team7/>} />
-  <Route path="/team8" element={<Team8/>} />
 </Routes>
       </Router>
       </div>

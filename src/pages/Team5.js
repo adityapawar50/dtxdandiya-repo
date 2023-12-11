@@ -26,7 +26,7 @@ function Team5() {
               {/* First Section */}
               <Flex p="4" textDecoration="underline" marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
                 <Heading as="h2" size="lg" mb="2" color="white">
-                  Welcome Team 1!
+                  Welcome WashU Raas!
                 </Heading>
               </Flex>
 
@@ -46,9 +46,9 @@ function Team5() {
                                      ☎️Liason Contacts☎️
                          </Heading>
          <UnorderedList mt="2" color="white">
-          <ListItem>Name:000-000-0000</ListItem>
-         <ListItem>Name:000-000-0000</ListItem>
-        <ListItem>Name:000-000-0000</ListItem>
+          <ListItem>Adrian Gaspar: 732-668-1820</ListItem>
+         <ListItem> Rhea Aemireddy: 214-937-9047</ListItem>
+        <ListItem> Saloni Janorkar: 469-793-1505</ListItem>
          </UnorderedList>
              </Flex>
 
