@@ -4,6 +4,7 @@ import { palette } from '../styling/theme';
 import dtxlogo from '../pics/dtxlogo.png'
 import instaIcon from "../pics/instagram.png"
 import MenuDrawer from "./MenuDrawer";
+import { Link as RouterLink } from "react-router-dom";
 
 
 const NavBar = (props) => {
@@ -82,9 +83,9 @@ const MenuLinks = ({ isOpen }) => {
       >
 
         <MenuItem to="/" color = {palette.dtxGold} >Home</MenuItem>
-        <MenuItem to="/resources" color = {palette.dtxGold}> Resources </MenuItem>
-        <MenuItem to="/portal" color = {palette.dtxGold}> Team Portal </MenuItem>
-        <MenuItem to="/map" color = {palette.dtxGold}> Venue Map </MenuItem>
+        <MenuItem as={RouterLink} to="/resources" color = {palette.dtxGold}> Resources </MenuItem>
+        <MenuItem as={RouterLink} to="/portal" color = {palette.dtxGold}> Team Portal </MenuItem>
+        <MenuItem as={RouterLink} to="/map" color = {palette.dtxGold}> Venue Map </MenuItem>
         <Flex isLast align="center" flex ="1">
                 <Box mr="4" h="50%" w = "30px">
                     <img src={instaIcon} alt="Logo" h="10px" w = "10px" onClick = {openInstagram}/>
