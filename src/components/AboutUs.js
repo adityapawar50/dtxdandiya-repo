@@ -14,7 +14,7 @@ const AboutUs = () =>{
     return(
         <Box
         w = "100%"
-        mt = "70"
+        mt = "50"
         >
             <VStack
             w = '100%'
@@ -26,22 +26,14 @@ const AboutUs = () =>{
                 borderColor={palette.dtxGold}
                 justify= "center"
                 >
-                    {/* <Box w='15%' h='10' bg='red.500' /> */}
-                    {/* <Spacer /> */}
                     <Heading as="h1"  color = {palette.dtxGold} >
                         <Text style={{whiteSpace: 'nowrap'}} >
                             About Us
                         </Text>
                     </Heading>
-                    {/* <Spacer />
-                    <Image
-                    src={fathippo}
-                    borderRadius='full'
-                    boxSize='150px'
-                    /> */}
                 </Flex>
                 <Flex justify = 'center' mt = "30px">
-                    <Text py='2' color = {palette.dtxGold} w = "70%" justify = 'center' align = 'center'>
+                    <Text py='2' color = {palette.dtxGold} w = "70%" justify = 'center' align = 'center' fontSize = {{ base: 'md', md:"lg", lg:'xl'}}>
                     Welcome to the heart of Dallas, where the vibrant rhythms of tradition meet the beats of unity
                     at our annual Raas Garba competition. As a flagship event hosted by our college, this cultural 
                     extravaganza is more than just a celebration; it's a spirited endeavor to bring our community together.
@@ -76,10 +68,9 @@ const AboutUs = () =>{
                                     Aryan Patel
                                 </Text>
                             </Heading>
-                            <Text py='2' color = {palette.dtxGold} w = "80%" justify = 'center'>
+                            <Text py='2' color = {palette.dtxGold} w = "80%" justify = 'center' fontSize = {{ base: 'sm', md:"lg", lg:'xl'}}>
                                 Welcome to the heart of Dallas, where the vibrant rhythms of tradition meet the beats of unity
-                                at our annual Raas Garba competition. As a flagship event hosted by our college, this cultural 
-                                extravaganza is more than just a celebration; it's a spirited endeavor to bring our community together yep.
+                                at our annual Raas Garba competition. 
             
                             </Text>
                         </VStack>
@@ -108,10 +99,9 @@ const AboutUs = () =>{
                                     Rhea Raina
                                 </Text>
                             </Heading>
-                            <Text py='2' color = {palette.dtxGold} w = "80%" justify = 'center'>
+                            <Text py='2' color = {palette.dtxGold} w = "80%" justify = 'center' fontSize = {{ base: 'sm', md:"lg", lg:'xl'}}>
                                 Welcome to the heart of Dallas, where the vibrant rhythms of tradition meet the beats of unity
-                                at our annual Raas Garba competition. As a flagship event hosted by our college, this cultural 
-                                extravaganza is more than just a celebration; it's a spirited endeavor to bring our community together.
+                                at our annual Raas Garba competition. 
             
                             </Text>
                         </VStack>
@@ -129,10 +119,9 @@ const AboutUs = () =>{
                                     Rushi Surampudi
                                 </Text>
                             </Heading>
-                            <Text py='2' color = {palette.dtxGold} w = "80%" justify = 'center'>
+                            <Text py='2' color = {palette.dtxGold} w = "80%" justify = 'center' fontSize = {{ base: 'sm', md:"lg", lg:'xl'}}>
                                 Welcome to the heart of Dallas, where the vibrant rhythms of tradition meet the beats of unity
-                                at our annual Raas Garba competition. As a flagship event hosted by our college, this cultural 
-                                extravaganza is more than just a celebration; it's a spirited endeavor to bring our community together.
+                                at our annual Raas Garba competition. 
             
                             </Text>
                         </VStack>
@@ -161,10 +150,9 @@ const AboutUs = () =>{
                                     Veeren Patel
                                 </Text>
                             </Heading>
-                            <Text py='2' color = {palette.dtxGold} w = "80%" justify = 'center'>
+                            <Text py='2' color = {palette.dtxGold} w = "80%" justify = 'center' fontSize = {{ base: 'sm', md:"lg", lg:'xl'}}>
                                 Welcome to the heart of Dallas, where the vibrant rhythms of tradition meet the beats of unity
-                                at our annual Raas Garba competition. As a flagship event hosted by our college, this cultural 
-                                extravaganza is more than just a celebration; it's a spirited endeavor to bring our community together.
+                                at our annual Raas Garba competition. 
             
                             </Text>
                         </VStack>

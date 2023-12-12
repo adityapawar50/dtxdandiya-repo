@@ -15,7 +15,7 @@ import {
   TableContainer,
 } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
-import hero1 from '../pics/julianwbg.png'
+import julianpic from '../pics/julianwbg.png'
 
 
 // placeholder schedule for now
@@ -36,54 +36,57 @@ export default function MainSched() {
   
   function CurrUpdatesBox(){
     return(
-    <Card
-      direction={{ base: 'column', sm: 'row' }}
-      overflow='hidden'
-      variant='outline'
-      w = '500px'
-      bg = {palette.bgDarkGreen}
-      borderColor={palette.dtxGold}
-      borderWidth='4px'
-      
-    >
-      <Image
-        src = {hero1}
-        borderRadius='0'
-        objectFit='cover'
-        maxW={{ base: '100%', sm: '200px' }}
-      />
+    <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center"  align = "center">
+      <Card
+        direction={{ base: 'column', sm: 'row' }}
+        overflow='hidden'
+        variant='outline'
+        w={{ base: '70%', sm: '500px'}}
+        bg = {palette.bgDarkGreen}
+        borderColor={palette.dtxGold}
+        borderWidth='4px'
+        
+      >
+        <Image
+          src = {julianpic}
+          borderRadius='0'
+          objectFit='cover'
+          maxW={{ base: '100%', sm: '200px' }}
+          maxH = {{ base: '90px', sm: '100%' }}
+        />
 
-      <Stack>
-        <CardBody>
-          <Heading size='lg' color = {palette.dtxGold} textDecoration="underline solid">Currently...</Heading>
+        <Stack >
+          <CardBody  fontSize = {{ base: 'xs', sm: 'sm', md:"md", lg:'lg'}} maxH = {{ base: '80px', sm: '100%' }} >
+            <Heading size='lg' color = {palette.dtxGold} textDecoration="underline solid" fontSize = {{ base: 'md',  md:"md", lg:'lg'}}>Currently...</Heading>
 
-          <Text py='2' color = {palette.dtxGold}>
-            getting dinner w ur mom nad eating ice cream at braums after then watchign how to 
-            train your dragon
-          </Text>
-        </CardBody>
+            <Text py='1' color = {palette.dtxGold}>
+              getting dinner w ur mom nad eating ice cream at braums after then watchign how to 
+              train your dragon
+            </Text>
+          </CardBody>
 
-        <CardFooter>
-          <Button variant='solid' bg={palette.dtxGold} color = {palette.bgDarkGreen}>
-            Up Next: ice cream time
-          </Button>
-        </CardFooter>
-      </Stack>
-    </Card>
+          <CardFooter>
+            <Button variant='solid' bg={palette.dtxGold} color = {palette.bgDarkGreen} fontSize = {{ base: 'xs', sm: 'sm', md:"md"}} maxH= {{ base: '30px', sm: '100%' }}>
+              Up Next: ice cream time
+            </Button>
+          </CardFooter>
+        </Stack>
+      </Card>
+    </Flex>
     )
   }
   
 
     return (
-      <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center">
+      <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center" >
         <Wrap  spacingX = "10" justify = "center" align ="center" >
           <WrapItem p = "5">
             <CurrUpdatesBox/>
           </WrapItem>
           <WrapItem p = "5">
 
-            <TableContainer>
-            <Table variant='simple' size = 'lg' colorScheme={palette.dtxGold}>
+            <TableContainer >
+            <Table variant='simple'  size={{ base: "sm", md: "lg", lg: "lg" }} colorScheme={palette.dtxGold}>
 
               <TableCaption
                 placement="top"

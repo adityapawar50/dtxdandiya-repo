@@ -12,15 +12,15 @@ import { palette } from '../styling/theme'
 
 function Homepage() {
     return (
-      <Box bg ={palette.bgDarkGreen}  w = "100vw">
-        <VStack align="center" justify="center" spacing="10px">
+      <Box bg ={palette.bgDarkGreen}  w = "100%"  overflowX="auto">
+        <VStack align="center" justify="center" spacing="10px" >
           <Header />
-          <Box>
-          <HeroWithPic />
+          <Box w = "100%">
+            <HeroWithPic />
           </Box>
           
-          <Flex>
-            <VStack spacing="40px">
+          <Flex w = "100%">
+            <VStack spacing="40px" w = "100%" >
 
               <MainSched/>
               <AboutUs/>

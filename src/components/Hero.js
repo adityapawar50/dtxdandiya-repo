@@ -22,10 +22,10 @@ export default function HeroWithPic() {
   return (
     <Flex bg ={palette.bgDarkGreen} w = "100%">
    
-   <Box h = "100%" w = '100%'>
-            <img src={hero_p2} alt="Logo"  />
-    </Box>
-      
+      <Box w = '100%'>
+                <img src={hero_p2} alt="Logo"  />
+        </Box>
+          
 
   </Flex>
   )

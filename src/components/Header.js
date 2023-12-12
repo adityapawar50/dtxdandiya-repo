@@ -34,7 +34,7 @@ const NavBar = (props) => {
         top="0"
         h = '12%'
     >
-      <Box mr="4%" w = "80px">
+      <Box mr="4%" w ={{ base: '50px', sm: '80px' }}>
         <img src={dtxlogo} alt="Logo" h="10px" w = "10px" />
       </Box>
 
@@ -103,24 +103,9 @@ const MenuLinks = ({ isOpen, handleTeamChange }) => {
         <MenuItem to="/resources" color={palette.dtxGold}>
           Resources
         </MenuItem>
-
-        {/* Always render the Select component */}
-        <Select
-          placeholder="Select Team"
-          onChange={(e) => handleTeamChange(e)}
-          w="200px" // Adjust the width as needed
-          color={palette.dtxGold}
-        >
-          <option value="/team1">Texas Raas</option>
-          <option value="/team2">GT Ramblin Raas</option>
-          <option value="/team3">Michigan Wolveraas</option>
-          <option value="/team4">Tamu Wreckin Raas</option>
-          <option value="/team5">WashU Raas</option>
-          <option value="/team6">UCB Raas Ramzat</option>
-          <option value="/team7">UW Raas</option>
-          {/* Add options for all teams */}
-        </Select>
-
+        <MenuItem to="/teamportal" color={palette.dtxGold}>
+          Team Portal
+        </MenuItem>
         <MenuItem to="/map" color={palette.dtxGold}>
           Venue Map
         </MenuItem>
