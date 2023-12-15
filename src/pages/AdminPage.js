@@ -1,83 +1,193 @@
-// AdminPage.js
+//AdminPage.js
 import { useState, useEffect } from 'react';
-import { Container, Box, Heading, Button, Input, VStack } from '@chakra-ui/react';
-import { db, collection, addDoc, getDocs, doc, setDoc } from '../Firebase'; // Import from your firebase.js file
-import { getFirestore } from 'firebase/firestore';
+import { Box, Flex, Heading, HStack, Button, Text, WrapItem, Wrap, Stack, Center, Image, VStack, ButtonSpinner } from "@chakra-ui/react";
+import {db,collection, addDoc, getDocs, doc, setDoc } from '../Firebase'; // Import from your firebase.js file
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from '@chakra-ui/react'
+import { getFirestore, onSnapshot } from 'firebase/firestore';
+import { palette } from '../styling/theme';
+import Header from '../components/Header';
+import React from "react";
 
 function AdminPage() {
   const [data, setData] = useState([]);
   const [newItem, setNewItem] = useState('');
   const [cityName, setCityName] = useState('');
 
+  // const [eventsFri, setEventsFri] = useState([]);
+  // const [locationsFri, setLocationsFri] = useState([]);
+  // const [timesFri, setTimesFri] = useState([]);
 
+ 
+
+  // const [compDay, setDay] = React.useState(false);
+
+  // const isFriday = () => setDay(true);
+  // const isSaturday = () => setDay(false)
 
   
-  async function getTest(db) {
-    console.log(process.env.REA)
-    const citiesCol = collection(db, 'testing');
-    const citySnapshot = await getDocs(citiesCol);
-    const cityList = citySnapshot.docs.map(doc => doc.data());
-    return cityList;
+
+  const AdminScheduler = () =>{
+    const [eventsFri, setEventsFri] = useState([]);
+    const [locationsFri, setLocationsFri] = useState([]);
+    const [timesFri, setTimesFri] = useState([]);
+
+    const [eventsSat, setEventsSat] = useState([]);
+    const [locationsSat, setLocationsSat] = useState([]);
+    const [timesSat, setTimesSat] = useState([]);
+
+    const [compDay, setDay] = React.useState(true);
+    const isFriday = () => setDay(true);
+    const isSaturday = () => setDay(false)
+
+
+    useEffect ( ()=> {
+      const fetchFridayData = async () => {
+        const fridayDocRef = doc(db, "comp", "schedule", "friday", "sched")
+        const unsubscribeFriday = onSnapshot(fridayDocRef, (doc) =>{
+          if (doc.exists()){
+            console.log("curr data: ", doc.data());
+            const source = doc.metadata.hasPendingWrites ? "Local" : "Server";
+            console.log(source, " data: ", doc.data());
+
+            const fridayScheduleData = doc.data();
+            setEventsFri(fridayScheduleData.what)
+            setTimesFri(fridayScheduleData.when)
+            setLocationsFri(fridayScheduleData.where)
+          } else{
+            console.log("document does not exist")
+          }
+          
+
+        });
+
+        return () => {
+          // Unsubscribe from the snapshot listener when the component unmounts
+          unsubscribeFriday();
+
+        };
+  
+        
+      };
+      fetchFridayData();
+  
+    }, []);
+
+    useEffect ( () => {
+      const fetchSaturdayData = async () => {
+        const saturdayDocRef = doc(db, "comp", "schedule", "saturday", "sched")
+        const unsubscribeSaturday = onSnapshot(saturdayDocRef, (doc) =>{
+          if (doc.exists()){
+            console.log("curr data: ", doc.data());
+            const source = doc.metadata.hasPendingWrites ? "Local" : "Server";
+            console.log(source, " data: ", doc.data());
+  
+            const saturdayScheduleData = doc.data();
+            setEventsSat(saturdayScheduleData.what)
+            setTimesSat(saturdayScheduleData.when)
+            setLocationsSat(saturdayScheduleData.where)
+          } else{
+            console.log("document does not exist")
+          }
+        });
+
+        return () => {
+          // Unsubscribe from the snapshot listener when the component unmounts
+          unsubscribeSaturday();
+
+        };
+      };
+      fetchSaturdayData();
+
+    }, []);
+
     
+
+  
+
+    return(
+    <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center" >
+              <TableContainer >
+              <Table variant='simple'  size={{ base: "sm", md: "lg", lg: "lg" }} colorScheme={palette.dtxGold}>
+  
+                <TableCaption
+                  placement="top"
+                  color = {palette.dtxGold}
+                >
+                  <HStack justify = "center" spacing = "10%" >
+                    <Button variant='outline' mr={3} colorScheme ={palette.dtxGold} onClick={isFriday} >
+                      Friday
+                    </Button>
+  
+                    <Button variant='outline' mr={3} colorScheme ={palette.dtxGold} onClick={isSaturday}>
+                      Saturday
+                    </Button>
+  
+                  </HStack>
+                </TableCaption>
+                <Thead color = {palette.dtxGold} bg = {palette.dtxGold}>
+                  <Tr>
+                    <Th color = {palette.bgDarkGreen}>What?</Th>
+                    <Th color = {palette.bgDarkGreen}>Where?</Th>
+                    <Th color = {palette.bgDarkGreen}> When?</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                {compDay 
+                ? eventsFri.map((event, index) => (
+                  <Tr key={index}>
+                    <Td>{eventsFri[index]}</Td>
+                    <Td>{locationsFri[index]}</Td>
+                    <Td>{timesFri[index]}</Td>
+                  </Tr>
+                ))
+                : eventsSat.map((event, index) => (
+                  <Tr key={index}>
+                    <Td>{eventsSat[index]}</Td>
+                    <Td>{locationsSat[index]}</Td>
+                    <Td>{timesSat[index]}</Td>
+                  </Tr>
+                ))
+                }
+                </Tbody>
+              </Table>
+            </TableContainer>  
+    
+      </Flex>
+    );
   }
 
-  const handleAddCity = async (newCityName) => {
-    const db = getFirestore(); // Get your Firestore instance
 
-    try {
-      // Reference to the 'cities' collection
-      const citiesCollection = collection(db, 'testing');
 
-      // Create a new document with an auto-generated ID
-      const newCityRef = doc(citiesCollection);
-
-      // Set data for the new document
-      await setDoc(newCityRef, {
-        name: newCityName,
-        // Other fields as needed
-      });
-
-      console.log('City added successfully!');
-    } catch (error) {
-      console.error('Error adding city:', error.message);
-    }
-  };
 
   return (
-    <Container>
-      <Box p={4}>
-        <Heading mb={4}>Admin Page</Heading>
-        <Input
-          placeholder="New Item"
-          value={newItem}
-          onChange={(e) => setNewItem(e.target.value)}
-          mr={2}
-        />
-        <Button colorScheme="teal" onClick={()=>console.log(getTest(db))}>
-          Add Item
-        </Button>
+    
+    <Box bg ={palette.bgDarkGreen}  w = "100%"  minh = "1000px" overflowX="auto">
+    <VStack align="center" justify="center" spacing="10px" >
+      <Header />
+      
+      <Flex w = "100%">
+        <VStack spacing="40px" w = "100%" >
 
-        <Box mt={4}>
-          <Heading size="md">"ggober":</Heading>
-          <ul>
-            {data.map((item) => (
-              <li key={item.id}>{item.value}</li>
-            ))}
-          </ul>
-        </Box>
-      <VStack spacing={4}>
-      <Input
-        placeholder="City Name"
-        value={cityName}
-        onChange={(e) => setCityName(e.target.value)}
-      />
-      <Button colorScheme="teal"  onClick={()=>{console.log(process.env)}}>
-        Add City
-      </Button>
-    </VStack>
-      </Box>
-    </Container>
+
+          <Box p="4">'About Us'</Box>
+          <Box p="4">Sponsors</Box>
+          <AdminScheduler/>
+        </VStack>
+      </Flex>
+    </VStack>  
+</Box>
   );
 }
 
 export default AdminPage;
+
