@@ -1,8 +1,10 @@
 // component to highlight what is going on 
-
-import { Box, Flex, Heading, HStack, Button, Text, WrapItem, Wrap, Stack, Center, Image, VStack, ButtonSpinner } from "@chakra-ui/react";
+import { Box, Flex,HStack, Button } from "@chakra-ui/react";
 import { palette } from '../styling/theme';
 import React from "react";
+import { useState, useEffect } from 'react';
+import {db,doc } from '../Firebase'; // Import from your firebase.js file
+import { getFirestore, onSnapshot } from 'firebase/firestore';
 import {
   Table,
   Thead,
@@ -14,77 +16,89 @@ import {
   TableCaption,
   TableContainer,
 } from '@chakra-ui/react'
-import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
-import julianpic from '../pics/julianwbg.png'
 
 
 // placeholder schedule for now
-export default function MainSched() {
-  const eventArrayFri = ['mixer', 'crying with bob', 'food', 'wake up'];
-  const locationArrayFri = ['ur moms bed', ' UTA admissions office', 'UTA dining hall', "bed"];
-  const timeArrayFri = ['2 am - 2:20 am', '3 am', '8 am', "10am"];
+const MainSchedule = () =>{
+  const [eventsFri, setEventsFri] = useState([]);
+  const [locationsFri, setLocationsFri] = useState([]);
+  const [timesFri, setTimesFri] = useState([]);
 
-  const eventArraySat = ['wake up', 'crying with ur mom', 'poop', 'pants joe', "leave"];
-  const locationArraySat = ['in the sky', ' UTA dungeon', 'HH', "mama", "dfw aiport"];
-  const timeArraySat = ['8 am - 9:20 am', '4 pm', '7 pm', "11 pm", "12 am"];
+  const [eventsSat, setEventsSat] = useState([]);
+  const [locationsSat, setLocationsSat] = useState([]);
+  const [timesSat, setTimesSat] = useState([]);
 
-  const [compDay, setDay] = React.useState(false);
-
+  const [compDay, setDay] = React.useState(true);
   const isFriday = () => setDay(true);
   const isSaturday = () => setDay(false)
 
-  
-  function CurrUpdatesBox(){
-    return(
-    <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center"  align = "center">
-      <Card
-        direction={{ base: 'column', sm: 'row' }}
-        overflow='hidden'
-        variant='outline'
-        w={{ base: '70%', sm: '500px'}}
-        bg = {palette.bgDarkGreen}
-        borderColor={palette.dtxGold}
-        borderWidth='4px'
+
+  useEffect ( ()=> {
+    const fetchFridayData = async () => {
+      const fridayDocRef = doc(db, "comp", "schedule", "friday", "sched")
+      const unsubscribeFriday = onSnapshot(fridayDocRef, (doc) =>{
+        if (doc.exists()){
+          console.log("curr data: ", doc.data());
+          const source = doc.metadata.hasPendingWrites ? "Local" : "Server";
+          console.log(source, " data: ", doc.data());
+
+          const fridayScheduleData = doc.data();
+          setEventsFri(fridayScheduleData.what)
+          setTimesFri(fridayScheduleData.when)
+          setLocationsFri(fridayScheduleData.where)
+        } else{
+          console.log("document does not exist")
+        }
         
-      >
-        <Image
-          src = {julianpic}
-          borderRadius='0'
-          objectFit='cover'
-          maxW={{ base: '100%', sm: '200px' }}
-          maxH = {{ base: '90px', sm: '100%' }}
-        />
 
-        <Stack >
-          <CardBody  fontSize = {{ base: 'xs', sm: 'sm', md:"md", lg:'lg'}} maxH = {{ base: '80px', sm: '100%' }} >
-            <Heading size='lg' color = {palette.dtxGold} textDecoration="underline solid" fontSize = {{ base: 'md',  md:"md", lg:'lg'}}>Currently...</Heading>
+      });
 
-            <Text py='1' color = {palette.dtxGold}>
-              getting dinner w ur mom nad eating ice cream at braums after then watchign how to 
-              train your dragon
-            </Text>
-          </CardBody>
+      return () => {
+        // Unsubscribe from the snapshot listener when the component unmounts
+        unsubscribeFriday();
 
-          <CardFooter>
-            <Button variant='solid' bg={palette.dtxGold} color = {palette.bgDarkGreen} fontSize = {{ base: 'xs', sm: 'sm', md:"md"}} maxH= {{ base: '30px', sm: '100%' }}>
-              Up Next: ice cream time
-            </Button>
-          </CardFooter>
-        </Stack>
-      </Card>
-    </Flex>
-    )
-  }
+      };
+
+      
+    };
+    fetchFridayData();
+
+  }, []);
+
+  useEffect ( () => {
+    const fetchSaturdayData = async () => {
+      const saturdayDocRef = doc(db, "comp", "schedule", "saturday", "sched")
+      const unsubscribeSaturday = onSnapshot(saturdayDocRef, (doc) =>{
+        if (doc.exists()){
+          console.log("curr data: ", doc.data());
+          const source = doc.metadata.hasPendingWrites ? "Local" : "Server";
+          console.log(source, " data: ", doc.data());
+
+          const saturdayScheduleData = doc.data();
+          setEventsSat(saturdayScheduleData.what)
+          setTimesSat(saturdayScheduleData.when)
+          setLocationsSat(saturdayScheduleData.where)
+        } else{
+          console.log("document does not exist")
+        }
+      });
+
+      return () => {
+        // Unsubscribe from the snapshot listener when the component unmounts
+        unsubscribeSaturday();
+
+      };
+    };
+    fetchSaturdayData();
+
+  }, []);
+
   
 
-    return (
-      <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center" >
-        <Wrap  spacingX = "10" justify = "center" align ="center" >
-          <WrapItem p = "5">
-            <CurrUpdatesBox/>
-          </WrapItem>
-          <WrapItem p = "5">
 
+
+  return(
+  <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center" >
             <TableContainer >
             <Table variant='simple'  size={{ base: "sm", md: "lg", lg: "lg" }} colorScheme={palette.dtxGold}>
 
@@ -112,29 +126,27 @@ export default function MainSched() {
               </Thead>
               <Tbody>
               {compDay 
-              ? eventArrayFri.map((event, index) => (
+              ? eventsFri.map((event, index) => (
                 <Tr key={index}>
-                  <Td>{eventArrayFri[index]}</Td>
-                  <Td>{locationArrayFri[index]}</Td>
-                  <Td>{timeArrayFri[index]}</Td>
+                  <Td>{eventsFri[index]}</Td>
+                  <Td>{locationsFri[index]}</Td>
+                  <Td>{timesFri[index]}</Td>
                 </Tr>
               ))
-              : eventArraySat.map((event, index) => (
+              : eventsSat.map((event, index) => (
                 <Tr key={index}>
-                  <Td>{eventArraySat[index]}</Td>
-                  <Td>{locationArraySat[index]}</Td>
-                  <Td>{timeArraySat[index]}</Td>
+                  <Td>{eventsSat[index]}</Td>
+                  <Td>{locationsSat[index]}</Td>
+                  <Td>{timesSat[index]}</Td>
                 </Tr>
               ))
               }
               </Tbody>
             </Table>
-          </TableContainer>
-      </WrapItem>
-
-    </Wrap>
-              
+          </TableContainer>  
   
     </Flex>
-    )
-  }
+  );
+}
+
+export default MainSchedule;
