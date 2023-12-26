@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { WrapItem, Wrap, Container, Box, Flex, VStack } from '@chakra-ui/react'
 import HeroWithPic from '../components/Hero'
-import MainSched from '../components/MainSchedule'
+import MainSched from '../components/Schedule'
 import AboutUs from '../components/AboutUs'
 import CurrUpdatesBox from "../components/CurrUpdatesBox"
 import Header from '../components/Header'
@@ -27,7 +27,7 @@ function Homepage() {
                     <CurrUpdatesBox/>
                   </WrapItem>
                   <WrapItem p = "5">
-                    <MainSched/>
+                    <MainSched scheduleName={'schedule'}/>
                   </WrapItem>
                 </Wrap>
               <AboutUs/>

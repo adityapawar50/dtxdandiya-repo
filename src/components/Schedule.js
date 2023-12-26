@@ -19,7 +19,7 @@ import {
 
 
 // placeholder schedule for now
-const MainSchedule = () =>{
+const MainSchedule = ({ scheduleName }) =>{
   const [eventsFri, setEventsFri] = useState([]);
   const [locationsFri, setLocationsFri] = useState([]);
   const [timesFri, setTimesFri] = useState([]);
@@ -35,7 +35,7 @@ const MainSchedule = () =>{
 
   useEffect ( ()=> {
     const fetchFridayData = async () => {
-      const fridayDocRef = doc(db, "comp", "schedule", "friday", "sched")
+      const fridayDocRef = doc(db, "comp", scheduleName, "friday", "sched")
       const unsubscribeFriday = onSnapshot(fridayDocRef, (doc) =>{
         if (doc.exists()){
           console.log("curr data: ", doc.data());
@@ -67,7 +67,7 @@ const MainSchedule = () =>{
 
   useEffect ( () => {
     const fetchSaturdayData = async () => {
-      const saturdayDocRef = doc(db, "comp", "schedule", "saturday", "sched")
+      const saturdayDocRef = doc(db, "comp", scheduleName, "saturday", "sched")
       const unsubscribeSaturday = onSnapshot(saturdayDocRef, (doc) =>{
         if (doc.exists()){
           console.log("curr data: ", doc.data());
@@ -107,11 +107,11 @@ const MainSchedule = () =>{
                 color = {palette.dtxGold}
               >
                 <HStack justify = "center" spacing = "10%" >
-                  <Button variant='outline' mr={3} colorScheme ={palette.dtxGold} onClick={isFriday} >
+                <Button  variant={compDay? 'solid':'outline'} mr={3}  borderColor = {palette.dtxGold} color ={palette.dtxGold} onClick={isFriday} >
                     Friday
                   </Button>
 
-                  <Button variant='outline' mr={3} colorScheme ={palette.dtxGold} onClick={isSaturday}>
+                  <Button variant={!compDay? 'solid':'outline'} mr={3} borderColor = {palette.dtxGold} color ={palette.dtxGold} onClick={isSaturday}>
                     Saturday
                   </Button>
 

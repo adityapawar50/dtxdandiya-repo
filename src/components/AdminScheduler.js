@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Box, Flex, Heading, Text, HStack, Button, Checkbox,WrapItem, Wrap, Stack, Center, Image, VStack, ButtonSpinner } from "@chakra-ui/react";
 import {db,collection, addDoc, getDocs, doc, setDoc } from '../Firebase'; // Import from your firebase.js file
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
   Table,
   Thead,
@@ -42,6 +44,9 @@ const AdminScheduler = () =>{
     const [newWhere, setNewWhere] = useState('');
     const [newWhen, setNewWhen] = useState('');
 
+    const [sched, setSched] = useState('schedule')
+    const [selectedOption, setSelectedOption] = useState('Homepage');
+
     const isFriday = () => {
       setDay(true);
 
@@ -61,7 +66,7 @@ const AdminScheduler = () =>{
     //update the firestore db with current passed in arrays
     const updateDoc= async(updatedEvents, updatedLocations, updatedTimes) => {
       const collectionName = compDay ? 'friday' : 'saturday';
-      const docRef = doc(db, 'comp', 'schedule', collectionName, 'sched');
+      const docRef = doc(db, 'comp', sched, collectionName, 'sched');
 
       const orderedUpdatedData = orderData(updatedEvents,updatedLocations, updatedTimes);
       
@@ -268,7 +273,7 @@ const AdminScheduler = () =>{
 
     useEffect ( ()=> {
       const fetchFridayData = async () => {
-        const fridayDocRef = doc(db, "comp", "schedule", "friday", "sched")
+        const fridayDocRef = doc(db, "comp", sched, "friday", "sched")
         const unsubscribeFriday = onSnapshot(fridayDocRef, (doc) =>{
           if (doc.exists()){
             console.log("curr data fri: ", doc.data());
@@ -298,11 +303,11 @@ const AdminScheduler = () =>{
       };
       fetchFridayData();
   
-    }, [compDay, db]);
+    }, [compDay, db, sched]);
 
     useEffect ( () => {
       const fetchSaturdayData = async () => {
-        const saturdayDocRef = doc(db, "comp", "schedule", "saturday", "sched")
+        const saturdayDocRef = doc(db, "comp", sched, "saturday", "sched")
         const unsubscribeSaturday = onSnapshot(saturdayDocRef, (doc) =>{
           if (doc.exists()){
             console.log("curr data sat: ", doc.data());
@@ -327,14 +332,67 @@ const AdminScheduler = () =>{
       };
       fetchSaturdayData();
 
-    }, [compDay, db]);
-
+    }, [compDay, db, sched]);
     
+    const MyDropdown = () => {
+      //const [selectedOption, setSelectedOption] = useState('homepage schedule');
+
+      const handleSelectOption = (option) => {
+        setSelectedOption(option);
+   
+        
+        switch(option){
+          case 'Homepage':
+            setSched('schedule')
+            break;
+          case 'DSD':
+            setSched('scheduledsd')
+            break;
+          case 'UW Raas':
+            setSched('scheduleuw')
+            break;
+          case 'WolverRaas':
+            setSched('schedulewolw')
+            break;
+          case 'GT Ramblin':
+            setSched('schedulegt')
+            break;
+          case 'WashU Raas':
+            setSched('schedulewashu')
+            break;
+          case 'UCB Ramzaat':
+            setSched('scheduleucb')
+            break;
+          case 'Wreckin Raas':
+            setSched('schedulewreckin')
+            break;
+        }
+      };
+
+      return (
+        <Menu>
+          <MenuButton  as={Button} rightIcon={<ChevronDownIcon />}>
+          {selectedOption }
+          </MenuButton>
+          <MenuList>
+            <MenuItem onClick={()=> handleSelectOption("Homepage")}>Homepage Schedule </MenuItem>
+            <MenuItem onClick={()=> handleSelectOption("DSD")}>DSD</MenuItem>
+            <MenuItem onClick={()=> handleSelectOption("UW Raas")}>UW Raas</MenuItem>
+            <MenuItem onClick={()=> handleSelectOption("WolverRaas")}>WolveRaas</MenuItem>
+            <MenuItem onClick={()=> handleSelectOption("GT Ramblin")}>GT Ramblin</MenuItem>
+            <MenuItem onClick={()=> handleSelectOption("WashU Raas")}>WashU Raas</MenuItem>
+            <MenuItem onClick={()=> handleSelectOption("UCB Ramzaat")}>UCB Ramzaat</MenuItem>
+            <MenuItem onClick={()=> handleSelectOption("Wreckin Raas")}>Wreckin Raas</MenuItem>
+          </MenuList>
+        </Menu>
+      );
+    };
 
 
     return(
     <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center" >
             <VStack>
+            <MyDropdown/>
             <TableContainer >
               <Table variant='simple'  size={{ base: "sm", md: "lg", lg: "lg" }} colorScheme={palette.dtxGold}>
   
@@ -343,11 +401,11 @@ const AdminScheduler = () =>{
                   color = {palette.dtxGold}
                 >
                   <HStack justify = "center" spacing = "10%" >
-                    <Button variant='outline' mr={3} colorScheme ={palette.dtxGold} onClick={isFriday} >
+                    <Button  variant={compDay? 'solid':'outline'} mr={3}  borderColor = {palette.dtxGold} color ={palette.dtxGold} onClick={isFriday} >
                       Friday
                     </Button>
   
-                    <Button variant='outline' mr={3} colorScheme ={palette.dtxGold} onClick={isSaturday}>
+                    <Button variant={!compDay? 'solid':'outline'} mr={3}  borderColor = {palette.dtxGold} color ={palette.dtxGold} onClick={isSaturday}>
                       Saturday
                     </Button>
   
