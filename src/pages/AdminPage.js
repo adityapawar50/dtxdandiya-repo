@@ -20,10 +20,11 @@ import React from "react";
 import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react';
 import AdminScheduler from '../components/AdminScheduler';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import FirebaseAuth from '../components/FirebaseAuth';
 
 
 function AdminPage() {
-  
+
 
   
   return (
@@ -31,7 +32,7 @@ function AdminPage() {
     <Box bg ={palette.bgDarkGreen}  w = "100%"  minh = "1000px" overflowX="auto">
     <VStack align="center" justify="center" spacing="10px" >
       <Header />
-      
+      <FirebaseAuth/>
       <Flex w = "100%">
         <VStack spacing="40px" w = "100%" >
 
@@ -39,6 +40,9 @@ function AdminPage() {
           <Box p="4">'About Us'</Box>
           <Box p="4">Sponsors</Box>
           <AdminScheduler/>
+          <Box p="4">Sponsors</Box>
+          <Box p="4">Sponsors</Box>
+
         </VStack>
       </Flex>
     </VStack>  

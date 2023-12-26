@@ -4,6 +4,10 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, doc, setDoc } from 'firebase/firestore';
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from 'firebase/auth';
+import * as firebaseui from 'firebaseui'
+
+import 'firebase/auth'; // import the authentication module
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -36,4 +40,6 @@ const db = getFirestore(firebaseApp);
 const analytics = getAnalytics(firebaseApp);
 const auth = getAuth(firebaseApp);
 
-export { db, collection, addDoc, getDocs, doc, setDoc, auth};
+const ui = new firebaseui.auth.AuthUI(auth);
+
+export { db, collection, addDoc, getDocs, doc, ui, setDoc, auth};
