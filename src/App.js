@@ -20,6 +20,8 @@ import Team4 from './pages/Team4';
 import Team5 from './pages/Team5';
 import Team6 from './pages/Team6';
 import Team7 from './pages/Team7';
+import ExecPortal from './pages/ExecPortal';
+
 import '@fontsource/raleway/900.css'
 import '@fontsource/bebas-neue/400.css'
 import '@fontsource/sigmar-one/400.css'
@@ -51,6 +53,7 @@ function App() {
             <Route path="/team5" element={<Team5/>} />
             <Route path="/team6" element={<Team6/>} />
             <Route path="/team7" element={<Team7/>} />
+            <Route path="/exec" element={<ExecPortal/>} />
           </Routes>
       </Router>
       </div>

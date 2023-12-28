@@ -366,6 +366,9 @@ const AdminScheduler = () =>{
           case 'Wreckin Raas':
             setSched('schedulewreckin')
             break;
+            case 'exec':
+              setSched('scheduleexec')
+              break;
         }
       };
 
@@ -376,6 +379,7 @@ const AdminScheduler = () =>{
           </MenuButton>
           <MenuList>
             <MenuItem onClick={()=> handleSelectOption("Homepage")}>Homepage Schedule </MenuItem>
+            <MenuItem onClick={()=> handleSelectOption("exec")}>Exec</MenuItem>
             <MenuItem onClick={()=> handleSelectOption("DSD")}>DSD</MenuItem>
             <MenuItem onClick={()=> handleSelectOption("UW Raas")}>UW Raas</MenuItem>
             <MenuItem onClick={()=> handleSelectOption("WolverRaas")}>WolveRaas</MenuItem>
