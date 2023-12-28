@@ -132,7 +132,7 @@ const MenuLinks = ({ isOpen, handleTeamChange }) => {
           <option value="/team1">Texas Raas</option>
           <option value="/team2">GT Ramblin Raas</option>
           <option value="/team3">Michigan Wolveraas</option>
-          <option value="/team4">Tamu Wreckin Raas</option>
+          <option value="/team4">TAMU Wreckin Raas</option>
           <option value="/team5">WashU Raas</option>
           <option value="/team6">UCB Raas Ramzat</option>
           <option value="/team7">UW Raas</option>

@@ -26,7 +26,7 @@ function Team4() {
               {/* First Section */}
               <Flex p="4" textDecoration="underline" marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
                 <Heading as="h2" size="lg" mb="2" color="white">
-                  Welcome Tamu Wreckin Raas!
+                  Welcome TAMU Wreckin Raas!
                 </Heading>
               </Flex>
 

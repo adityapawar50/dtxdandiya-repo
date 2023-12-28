@@ -46,7 +46,7 @@ function Team6() {
                                      ☎️Liason Contacts☎️
                          </Heading>
          <UnorderedList mt="2" color="white">
-         <ListItem>Kunj Patel: 469-826-7490</ListItem>
+         <ListItem>Kunj Patel: 469-826-7490 (Ladies he's super hot and sexy and smart and so cute and creative and fine and gujurati  😉)</ListItem>
          <ListItem> Hima Patel: 214-995-4423</ListItem>
         <ListItem> Pankti Mevada: 469-690-7461</ListItem>
          </UnorderedList>
