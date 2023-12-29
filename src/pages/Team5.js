@@ -52,15 +52,15 @@ function Team5() {
          </UnorderedList>
              </Flex>
 
-{/* Tech Time Videos Section */}
+{/* Announcements Section */}
 <Flex direction="column"  p="6" mt="2" borderWidth="12px" borderRadius="lg" borderStyle={"double"} borderColor={palette.dtxGold } align="center" justify="center">
-<Heading as="h2" size="md" mb="2" color="white">
-  🎥 Tech Time Videos 🎥
-</Heading>
-<Text color="white">
-  Below you will find your Tech Time Videos. This is available to you and only you! Good luck :)
-</Text>
-</Flex>
+    <Heading as="h2" size="md" mb="2" color="white">
+    📢 Announcements 📢
+    </Heading>
+    <Text color="white">
+      Please dm rishil uppaluru now (single non 800lb females only)
+    </Text>
+  </Flex>
 </Flex>
 
 {/* New Flex container for YouTube videos */}
