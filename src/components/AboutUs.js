@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import {
-  Box, VStack, Heading, HStack, Button,Flex,Text, useMediaQuery, Divider,} from "@chakra-ui/react";
+  Box, VStack, Heading, HStack, Button,Flex,Text, useMediaQuery, Divider,Card, CardBody, Stack} from "@chakra-ui/react";
 import { palette } from "../styling/theme";
-import { Card, CardBody, Stack } from "@chakra-ui/react";
-
 import ap from "../pics/exectogether/ap.jpg"
 import directors from "../pics/exectogether/directors.jpg"
 import finance from "../pics/exectogether/finance.jpg"
@@ -95,9 +93,9 @@ const AboutUs = () => {
         const committeeDirectors = getCommitteeDirectors();
       
         return committeeDirectors.map((director, index) => {
-          if (index === 0) { // Display only the first director for each committee
+          if (index === 0) {
             return (
-              <Card key={index} maxW={isLargerThan768 ? 'md' : 'full'}>
+              <Card key={index} maxW={isLargerThan768 ? 'md' :'full'}>
                 <CardBody>
                   <LazyLoadImage
                     src={director.image}
@@ -107,7 +105,7 @@ const AboutUs = () => {
                     visibleByDefault={isLargerThan768}
                   />
                   <Stack mt="6" spacing="3">
-                    <Heading size="md">{director.name}</Heading>
+                    <Heading size="md" fontFamily="Times New Roman">{director.name}</Heading>
                     {/* No description in your data */}
                     {/* <Text>{director.description}</Text> */}
                   </Stack>
@@ -116,7 +114,7 @@ const AboutUs = () => {
               </Card>
             );
           }
-          return null; // Return null for directors after the first one in each committee
+          return null;
         });
       };
       
