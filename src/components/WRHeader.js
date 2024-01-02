@@ -45,7 +45,7 @@ const NavBar = (props) => {
         <img src={WRLogo} alt="Logo" h="10px" w="10px" />
       </Box>
 
-      <MenuToggle toggle={toggle} isOpen={isOpen} />
+      <DrawerToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} handleTeamChange={handleTeamChange} />
       {isLoginOpen && <CloseButton onClick={() => setIsLoginOpen(false)} />}
     </NavBarContainer>
