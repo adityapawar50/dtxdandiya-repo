@@ -12,7 +12,7 @@ import VenueMap from './pages/VenueMap';
 import TeamPortal from './pages/TeamPortal';
 import AdminPage from './pages/AdminPage';
 import PageNotFound from './pages/PageNotFound';
-import Login from './pages/Login';
+import LoginPopup from './pages/LoginPopup';
 import Team1 from './pages/Team1';
 import Team2 from './pages/Team2';
 import Team3 from './pages/Team3';
@@ -45,7 +45,7 @@ function App() {
             <Route path="/admin" element={<AdminPage/> }/>
             <Route path="/app" element={<App />} />
             <Route path="*" element={<PageNotFound/>} />
-            <Route path ="/login" element={<Login/>} />
+            <Route path ="/login" element={<LoginPopup/>} />
             <Route path="/team1" element={<Team1/>} />
             <Route path="/team2" element={<Team2/>} />
             <Route path="/team3" element={<Team3/>} />
@@ -61,5 +61,4 @@ function App() {
 
   )
 }
-
 export default App;

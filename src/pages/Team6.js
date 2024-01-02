@@ -1,37 +1,30 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import * as React from 'react';
 import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer } from '@chakra-ui/react';
-import Header from '../components/Header';
+import UCBRHeader from '../components/UCBRHeader';
 import { palette } from '../styling/theme';
-import hero_p3 from '../pics/hero_p3.png';
 
 function Team6() {
   return (
     <Flex direction="column" bg={palette.bgDarkGreen} w="100vw" h="100%">
     <VStack align="center" justify="center" spacing="10px" h="100%">
-      <Header />
+      <UCBRHeader />
 
-      <Flex
-      position="relative"
-      bgImage={`url(${hero_p3})`}
-      bgSize="cover"
-      bgPosition="center"
-      bgRepeat="no-repeat"
-      w="100%"
-      h="100%"
-    >
+
         <ChakraProvider>
         <Container maxW="container.xl">
           <Flex direction="column" w="100%">
               {/* First Section */}
               <Flex p="4" textDecoration="underline" marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
-                <Heading as="h2" size="lg" mb="2" color="white">
-                  Welcome UCB Raas Ramzat!
+                <Heading as="h2" size="lg" mb="2">
+                <span style={{ color:"blue" }}> Welcome UCB </span>
+                <span style={{ color: 'gold' }}>Raas</span>
+                <span style={{ color:"blue" }}> Ramzat!</span>
                 </Heading>
               </Flex>
 
              {/* Where Should We Be Section */}
-            <Flex direction="column" p="6" borderWidth="12px" borderRadius="lg" borderStyle={"double"} marginTop={20} borderColor={palette.dtxGold}>
+            <Flex direction="column" p="6" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} marginTop={20} borderColor={palette.dtxGold}>
                 <Heading as="h2" size="md" mb="2" color="white">
                             📍Where Should We Be📍
                 </Heading>
@@ -41,26 +34,26 @@ function Team6() {
             </Flex>
 
                                 {/* Liason Contacts Section */}
-            <Flex direction="column" mt="4" p="6" borderWidth="12px" borderRadius="lg" borderStyle={"double"} borderColor={palette.dtxGold} mb="4">
+            <Flex direction="column" mt="4" p="6" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} borderColor={palette.dtxGold} mb="4">
                      <Heading as="h2" size="md" mb="2" color="white">
                                      ☎️Liason Contacts☎️
                          </Heading>
          <UnorderedList mt="2" color="white">
-         <ListItem>Kunj Patel: 469-826-7490</ListItem>
+         <ListItem>Kunj Patel: 469-826-7490 (Ladies he's super hot and sexy and smart and so cute and creative and fine and gujurati  😉)</ListItem>
          <ListItem> Hima Patel: 214-995-4423</ListItem>
         <ListItem> Pankti Mevada: 469-690-7461</ListItem>
          </UnorderedList>
              </Flex>
 
-{/* Tech Time Videos Section */}
-<Flex direction="column"  p="6" mt="2" borderWidth="12px" borderRadius="lg" borderStyle={"double"} borderColor={palette.dtxGold } align="center" justify="center">
-<Heading as="h2" size="md" mb="2" color="white">
-  🎥 Tech Time Videos 🎥
-</Heading>
-<Text color="white">
-  Below you will find your Tech Time Videos. This is available to you and only you! Good luck :)
-</Text>
-</Flex>
+{/* Announcements Section */}
+<Flex direction="column"  p="6" mt="2" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} borderColor={palette.dtxGold } align="center" justify="center">
+    <Heading as="h2" size="md" mb="2" color="white">
+    📢 Announcements 📢
+    </Heading>
+    <Text color="white">
+      Please dm rishil uppaluru now (single non 800lb females only)
+    </Text>
+  </Flex>
 </Flex>
 
 {/* New Flex container for YouTube videos */}
@@ -100,7 +93,6 @@ sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
               </Flex>
           </Container>
         </ChakraProvider>
-      </Flex>
     </VStack>
   </Flex>
 );

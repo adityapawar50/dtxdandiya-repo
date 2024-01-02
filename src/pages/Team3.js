@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import * as React from 'react';
 import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer } from '@chakra-ui/react';
-import Header from '../components/Header';
+import MWHeader from '../components/MWHeader';
 import { palette } from '../styling/theme';
 import hero_p3 from '../pics/hero_p3.png';
 
@@ -9,29 +9,26 @@ function Team3() {
   return (
     <Flex direction="column" bg={palette.bgDarkGreen} w="100vw" h="100%">
     <VStack align="center" justify="center" spacing="10px" h="100%">
-      <Header />
+      <MWHeader />
 
-      <Flex
-      position="relative"
-      bgImage={`url(${hero_p3})`}
-      bgSize="cover"
-      bgPosition="center"
-      bgRepeat="no-repeat"
-      w="100%"
-      h="100%"
-    >
         <ChakraProvider>
         <Container maxW="container.xl">
           <Flex direction="column" w="100%">
               {/* First Section */}
-              <Flex p="4" textDecoration="underline" marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
-                <Heading as="h2" size="lg" mb="2" color="white">
-                  Welcome Michigan Wolveraas!
-                </Heading>
-              </Flex>
+              <Flex p="4"  marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
+  <Heading as="h2" size="lg" mb="2">
+    <span style={{ color: 'blue' }}>   Wel</span>
+    <span style={{ color: 'yellow' }}>come </span>
+    <span style={{ color: 'blue' }}> Mich</span>
+    <span style={{ color: 'blue' }}>igan</span>
+    <span style={{ color: 'blue' }}> Wolve</span>
+    <span style={{ color: 'yellow' }}>raas!</span>
+  </Heading>
+</Flex>
+
 
              {/* Where Should We Be Section */}
-            <Flex direction="column" p="6" borderWidth="12px" borderRadius="lg" borderStyle={"double"} marginTop={20} borderColor={palette.dtxGold}>
+            <Flex direction="column" p="6" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} marginTop={20} borderColor={palette.dtxGold}>
                 <Heading as="h2" size="md" mb="2" color="white">
                             📍Where Should We Be📍
                 </Heading>
@@ -41,7 +38,7 @@ function Team3() {
             </Flex>
 
                                 {/* Liason Contacts Section */}
-            <Flex direction="column" mt="4" p="6" borderWidth="12px" borderRadius="lg" borderStyle={"double"} borderColor={palette.dtxGold} mb="4">
+            <Flex direction="column" mt="4" p="6" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} borderColor={palette.dtxGold} mb="4">
                      <Heading as="h2" size="md" mb="2" color="white">
                                      ☎️Liason Contacts☎️
                          </Heading>
@@ -52,16 +49,21 @@ function Team3() {
          </UnorderedList>
              </Flex>
 
-{/* Tech Time Videos Section */}
-<Flex direction="column"  p="6" mt="2" borderWidth="12px" borderRadius="lg" borderStyle={"double"} borderColor={palette.dtxGold } align="center" justify="center">
-<Heading as="h2" size="md" mb="2" color="white">
-  🎥 Tech Time Videos 🎥
-</Heading>
-<Text color="white">
-  Below you will find your Tech Time Videos. This is available to you and only you! Good luck :)
-</Text>
+{/* Announcements Section */}
+<Flex direction="column"  p="6" mt="2" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} borderColor={palette.dtxGold } align="center" justify="center">
+    <Heading as="h2" size="md" mb="2" color="white">
+    📢 Announcements 📢
+    </Heading>
+    <Text color="white">
+      Please dm rishil uppaluru now (single non 800lb females only)
+    </Text>
+  </Flex>
 </Flex>
-</Flex>
+
+
+
+
+
 
 {/* New Flex container for YouTube videos */}
 <Flex direction="column" mt="4">
@@ -100,7 +102,6 @@ sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
               </Flex>
           </Container>
         </ChakraProvider>
-      </Flex>
     </VStack>
   </Flex>
 );

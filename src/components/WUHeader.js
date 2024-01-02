@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button, Stack, Select } from "@chakra-ui/react";
 import { palette } from "../styling/theme";
-import dtxlogo from "../pics/dtxlogo.png";
+import WULogo from "../pics/WULogo.png";
 import instaIcon from "../pics/instagram.png";
 import tiktokIcon from "../pics/tiktok.png";
 import MenuDrawer from "./MenuDrawer";
@@ -41,8 +41,8 @@ const NavBar = (props) => {
       top="0"
       h="12%"
     >
-      <Box mr="4%" w ={{ base: '50px', sm: '80px' }}>
-        <img src={dtxlogo} alt="Logo" h="10px" w = "10px" />
+      <Box mr="4%" w="80px">
+        <img src={WULogo} alt="Logo" h="10px" w="10px" />
       </Box>
 
       <MenuToggle toggle={toggle} isOpen={isOpen} />
@@ -62,6 +62,17 @@ const CloseIcon = () => (
   </svg>
 );
 
+const MenuIcon = () => (
+  <svg
+    width="24px"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+    fill={palette.dtxGold}
+  >
+    <title>Menu</title>
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+);
 
 const openInstagram = () => {
   window.open("https://www.instagram.com/dtx.dandiya/?hl=en", "_blank");
@@ -71,6 +82,13 @@ const openTiktok = () => {
   window.open("https://www.tiktok.com/@dtx.dandiya", "_blank");
 };
 
+const MenuToggle = ({ toggle, isOpen }) => {
+  return (
+    <Box display={{ base: "block", md: "none" }} onClick={toggle}>
+      {isOpen ? <CloseIcon /> : <MenuIcon />}
+    </Box>
+  );
+};
 
 const DrawerToggle = ({ toggle, isOpen }) => {
   return (
