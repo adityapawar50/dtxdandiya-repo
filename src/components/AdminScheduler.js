@@ -16,7 +16,6 @@ import {
 } from '@chakra-ui/react'
 import { getFirestore, onSnapshot } from 'firebase/firestore';
 import { palette } from '../styling/theme';
-import Header from '../components/Header';
 import React from "react";
 import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react';
 
@@ -193,15 +192,7 @@ const AdminScheduler = () =>{
         //const orderedUpdatedData = orderData(updatedEvents, updatedLocations, updatedTimes)
         updateDoc(updatedEvents, updatedLocations, updatedTimes);
  
-        // if (compDay){
-        //   setEventsFri(orderedUpdatedData.sortedArrWhat)
-        //   setLocationsFri(orderedUpdatedData.sortedArrWhere)
-        //   setTimesFri(orderedUpdatedData.sortedArrWhen)
-        // }else{
-        //   setEventsSat(orderedUpdatedData.sortedArrWhat)
-        //   setLocationsSat(orderedUpdatedData.sortedArrWhere)
-        //   setTimesSat(orderedUpdatedData.sortedArrWhen)
-        // }
+
 
         // Clear selected rows after deletion
         setSelectedRowsSat([]);

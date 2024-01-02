@@ -21,6 +21,7 @@ import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react';
 import AdminScheduler from '../components/AdminScheduler';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import FirebaseAuth from '../components/FirebaseAuth';
+import AdminAnnouncer from '../components/AdminAnnouncer';
 
 
 function AdminPage() {
@@ -75,6 +76,7 @@ function AdminPage() {
           </Flex>
           <VerticalBulletList/>
           <AdminScheduler/>
+          <AdminAnnouncer/>
           <Box p="4">Sponsors</Box>
           <Box p="4">Sponsors</Box>
 
