@@ -16,31 +16,31 @@ const LoginPopup = ({ isOpen, onClose }) => {
   const handleLogin = () => {
     // Perform a conditional check based on the entered password
     switch (password) {
-      case "texasraas2024":
+      case "gloriatexasraas2024":
         // Redirect to Team 1 portal
         navigate("/team1");
         break;
-      case "gtramblin2024":
+      case "kingjulianramblinraas":
         // Redirect to Team 2 portal
         navigate("/team2");
         break;
-      case "wolveraas2024":
+      case "martywolveraas":
         // Redirect to Team 3 portal
         navigate("/team3");
         break;
-      case "gigem2024":
+      case "alexwreckinraas":
         // Redirect to Team 4 portal
         navigate("/team4");
         break;
-      case "washu2024":
+      case "mortwashu":
         // Redirect to Team 5 portal
         navigate("/team5");
         break;
-      case "ramzat2024":
+      case "penguinsramzat":
         // Redirect to Team 6 portal
         navigate("/team6");
         break;
-      case "uwraas2024":
+      case "melmanuwraas":
         // Redirect to Team 7 portal
         navigate("/team7");
         break;
