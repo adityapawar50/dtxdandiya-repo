@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import {db,collection, addDoc, getDocs, doc, setDoc } from '../Firebase'; // Import from your firebase.js file
 
 
-const CurrUpdatesBox = ({imageSrc, team}) =>{
+const CurrUpdatesBox = ({imageSrc, team, whoToContact}) =>{
   const [announcement, setAnnouncement] = useState('');
 
   useEffect ( ()=> {
@@ -70,7 +70,11 @@ const CurrUpdatesBox = ({imageSrc, team}) =>{
               {announcement}
             </Text>
           </CardBody>
-
+          <CardFooter>
+            <Button variant='solid' bg={palette.dtxGold} color = {palette.bgDarkGreen} fontSize = {{ base: 'xs', sm: 'sm', md:"md"}} maxH= {{ base: '30px', sm: '100%' }}>
+              Questions? Contact {whoToContact}
+            </Button>
+          </CardFooter>
         </Stack>
       </Card>
     </Flex>
