@@ -31,7 +31,7 @@ function Homepage() {
                     <MainSched scheduleName={'schedule'}/>
                   </WrapItem>
                 </Wrap>
-              <Announcement/>
+              
               <AboutUs/>
 
               <Box p="4">'About Us'</Box>

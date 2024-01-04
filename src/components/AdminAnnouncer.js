@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box, Flex, Heading, Text, HStack, Button, Checkbox,WrapItem, Wrap, Stack, Center, Image, VStack, ButtonSpinner } from "@chakra-ui/react";
-import {db,collection, addDoc, getDocs, doc, setDoc } from '../Firebase'; // Import from your firebase.js file
-import { getFirestore, onSnapshot } from 'firebase/firestore';
+import {db,collection, addDoc, doc, setDoc } from '../Firebase'; // Import from your firebase.js file
+import { getFirestore, onSnapshot, getDoc } from 'firebase/firestore';
 import { palette } from '../styling/theme';
 import React from "react";
 import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react';
@@ -12,7 +12,7 @@ import { Textarea } from '@chakra-ui/react'
 const AdminAnnouncer = () =>{
     const [announcement, setAnnouncement] = useState('');
     const [teams, setTeams] = useState([
-        { name: 'exec', isSelected: false },
+        { name: 'hompageUpNext', isSelected: false },
         { name: 'homepage', isSelected: false },
         { name: 'gt', isSelected: false },
         { name: 'dsd', isSelected: false },
@@ -48,11 +48,31 @@ const AdminAnnouncer = () =>{
         const selectedTeams = teams.filter(team => team.isSelected);
         
         const docRef = doc(db, 'comp', 'announcements' );
-        selectedTeams.forEach( async (selectedTeam) => {
-            setDoc(docRef, {
-                [selectedTeam.name] : announcement,
+
+        try {
+            // Fetch existing data
+            const docSnap = await getDoc(docRef);
+        
+            if (docSnap.exists()) {
+              // Get the existing data
+              const existingData = docSnap.data() || {};
+        
+              // Update only the selected team fields
+              selectedTeams.forEach(selectedTeam => {
+                existingData[selectedTeam.name] = announcement;
               });
-          });
+        
+              // Set the updated data back in Firestore
+              await setDoc(docRef, existingData);
+        
+              console.log("Announcement sent successfully!");
+            } else {
+              console.error("Document does not exist!");
+            }
+          } catch (error) {
+            console.error("Error sending announcement:", error);
+          }
+
 
     }
 
@@ -61,9 +81,12 @@ const AdminAnnouncer = () =>{
           alert('Please fill in a message to send and select recipients');
           return;
         }
-
+        
+        sendMessageToFireStore();
 
         setAnnouncement('')
+        const updatedTeams = teams.map(team => ({ ...team, isSelected: false }));
+        setTeams(updatedTeams);
     }
 
     return(
