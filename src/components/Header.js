@@ -1,53 +1,46 @@
 import React from "react";
-import { Link, Box, Flex, Text, Button, Stack, Select } from "@chakra-ui/react";
-import { palette } from "../styling/theme";
-import dtxlogo from "../pics/dtxlogo.png";
-import instaIcon from "../pics/instagram.png";
-import tiktokIcon from "../pics/tiktok.png";
+import { Link, Box, Flex, Text, Button,MenuButton, Stack, Select, } from "@chakra-ui/react";
+import { palette } from '../styling/theme';
+import dtxlogo from '../pics/dtxlogo.png'
+import instaIcon from "../pics/instagram.png"
+import tiktokIcon from "../pics/tiktok.png"
 import MenuDrawer from "./MenuDrawer";
-import LoginPopup from "../pages/LoginPopup";
-import { Input, InputGroup, InputRightElement, CloseButton } from '@chakra-ui/react';
+
+
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedTeam, setSelectedTeam] = React.useState("");
-  const [isLoginOpen, setIsLoginOpen] = React.useState(false);
-  const [showPassword, setShowPassword] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
   const handleTeamChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedTeam(selectedValue);
-
+  
+    // Navigate to the selected team page using window.location.href
     if (selectedValue) {
       window.location.href = selectedValue;
     }
   };
 
   return (
-    <NavBarContainer
-      isOpen={isOpen}
-      handleTeamChange={handleTeamChange}
-      isLoginOpen={isLoginOpen}
-      setIsLoginOpen={setIsLoginOpen}
-      showPassword={showPassword}
-      setShowPassword={setShowPassword}
+    <NavBarContainer 
       position="fixed"
-      width="100vw"
-      opacity="100%"
-      color="white"
-      padding="4%"
-      zIndex="999"
-      top="0"
-      h="12%"
+        width="100vw"
+        opacity = '100%'
+        color="white"
+        padding="4%"
+        zIndex="999"
+        top="0"
+        h = '12%'
     >
       <Box mr="4%" w ={{ base: '50px', sm: '80px' }}>
         <img src={dtxlogo} alt="Logo" h="10px" w = "10px" />
       </Box>
 
-      <DrawerToggle toggle={toggle} isOpen={isOpen} />
+      {/* <MenuToggle toggle={toggle} isOpen={isOpen} /> */}
+      <DrawerToggle  isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} handleTeamChange={handleTeamChange} />
-      {isLoginOpen && <CloseButton onClick={() => setIsLoginOpen(false)} />}
     </NavBarContainer>
   );
 };
@@ -75,8 +68,9 @@ const openTiktok = () => {
 const DrawerToggle = ({ toggle, isOpen }) => {
   return (
     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
-      {isOpen ? <CloseIcon /> : <MenuDrawer />}
+      {isOpen ? <CloseIcon /> : <MenuDrawer/>}
     </Box>
+    
   );
 };
 
@@ -89,14 +83,8 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
     </Link>
   );
 };
+
 const MenuLinks = ({ isOpen, handleTeamChange }) => {
-  const [isLoginOpen, setIsLoginOpen] = React.useState(false);
-  const [showPassword, setShowPassword] = React.useState(false);
-
-  const openTeamPortal = () => {
-    setIsLoginOpen(true);
-  };
-
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -115,81 +103,44 @@ const MenuLinks = ({ isOpen, handleTeamChange }) => {
         <MenuItem to="/resources" color={palette.dtxGold}>
           Resources
         </MenuItem>
-        <Button onClick={openTeamPortal} color={palette.dtxGold}>
+        <MenuItem to="/teamportal" color={palette.dtxGold}>
           Team Portal
-        </Button>
+        </MenuItem>
         <MenuItem to="/map" color={palette.dtxGold}>
           Venue Map
         </MenuItem>
         <Flex isLast align="center" flex="1">
           <Box mr="4" h="50%" w="30px">
-            <img
-              src={instaIcon}
-              alt="Logo"
-              h="10px"
-              w="10px"
-              onClick={openInstagram}
-            />
+            <img src={instaIcon} alt="Logo" h="10px" w="10px" onClick={openInstagram} />
           </Box>
           <Box mr="4" h="50%" w="30px">
-            <img
-              src={tiktokIcon}
-              alt="Logo"
-              h="10px"
-              w="10px"
-              onClick={openTiktok}
-            />
+            <img src={tiktokIcon} alt="Logo" h="10px" w="10px" onClick={openTiktok} />
           </Box>
         </Flex>
-        <LoginPopup isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)}>
-          <CloseButton onClick={() => setIsLoginOpen(false)} />
-          <InputGroup size="md" mt={3}>
-            <Input
-              pr="4.5rem"
-              type={showPassword ? "text" : "password"}
-              placeholder="Enter password"
-            />
-            <InputRightElement width="4.5rem">
-              <Button h="1.75rem" size="sm" onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? "Hide" : "Show"}
-              </Button>
-            </InputRightElement>
-          </InputGroup>
-        </LoginPopup>
       </Stack>
     </Box>
   );
 };
+
+
+
 const NavBarContainer = ({ children, ...props }) => {
   return (
-    <React.Fragment>
-      <Flex
-        as="nav"
-        align="center"
-        justify="space-between"
-        wrap="wrap"
-        w="100%"
-        mb={8}
-        p={8}
-        bg={[
-          "transparent",
-          "transparent",
-          "transparent",
-          "transparent"
-        ]}
-        color={[
-          palette.dtxGold,
-          palette.dtxGold,
-          palette.dtxGold,
-          palette.dtxGold
-        ]}
-        {...props}
-      >
-        {children}
-      </Flex>
-    </React.Fragment>
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      w="100%"
+      mb={8}
+      p={8}
+      bg={["transparent", "transparent", "transparent", "transparent"]}
+      color={[palette.dtxGold, palette.dtxGold, palette.dtxGold, palette.dtxGold]}
+      {...props}
+    >
+      {children}
+    </Flex>
   );
 };
 
 export default NavBar;
-
