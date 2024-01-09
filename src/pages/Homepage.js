@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { WrapItem, Wrap, Container, Box, Flex, VStack } from '@chakra-ui/react'
+import { WrapItem, Wrap, Container, useBreakpointValue, Box, Flex, VStack } from '@chakra-ui/react'
 import HeroWithPic from '../components/Hero'
+import HeroMobile from '../components/HeroMobile'
 import MainSched from '../components/Schedule'
 import AboutUs from '../components/AboutUs'
 import CurrUpdatesBox from "../components/CurrUpdatesBox"
@@ -11,13 +12,20 @@ import { palette } from '../styling/theme'
 
 
 function Homepage() {
+
+    const imageComponent = useBreakpointValue({
+      base: <HeroMobile />, // Render this component for small/base screens
+      md: <HeroWithPic  />, // Render this component for medium screens and above
+      lg: <HeroWithPic  />, // You can customize font size based on breakpoints
+    });
+
     return (
       <Box bg ={palette.bgDarkGreen}  w = "100%"  overflowX="auto">
         <VStack align="center" justify="center" spacing="10px" >
           <Header />
           
           <Box w = "100%">
-            <HeroWithPic />
+            {imageComponent}
           </Box>
           
           <Flex w = "100%">
