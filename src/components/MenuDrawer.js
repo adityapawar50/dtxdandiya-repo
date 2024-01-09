@@ -44,9 +44,10 @@ const MenuDrawer = () => {
         >
           <DrawerOverlay />
           <DrawerContent
+          h="100vh"
           bg = {palette.bgDarkGreen}
           >
-            <DrawerCloseButton />
+            <DrawerCloseButton color = {palette.dtxGold}/>
             <DrawerHeader
             color = {palette.dtxGold}
             align = "stretch"
