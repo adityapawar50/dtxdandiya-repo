@@ -7,6 +7,7 @@ import AboutUs from '../components/AboutUs'
 import CurrUpdatesBox from "../components/CurrUpdatesBox"
 import Header from '../components/Header'
 import { palette } from '../styling/theme'
+import Announcement from '../components/Announcement'
 
 
 
@@ -38,6 +39,7 @@ function Homepage() {
                     <MainSched scheduleName={'schedule'}/>
                   </WrapItem>
                 </Wrap>
+              
               <AboutUs/>
 
               <Box p="4">'About Us'</Box>
