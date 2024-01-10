@@ -12,7 +12,7 @@ import {
   import { palette } from '../styling/theme';
   import dtxlogo from '../pics/dtxlogo.png'
   import hero_p2 from '../pics/hero_p2.png'
-  import hero_mobile from '../pics/mobilehero.png'
+  import hero_mobile from '../pics/mobilepic.png'
   import titlepagehero from '../pics/titlepagehero.png'
   
   
