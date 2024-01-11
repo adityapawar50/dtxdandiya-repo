@@ -3,6 +3,8 @@ import * as React from 'react';
 import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer } from '@chakra-ui/react';
 import UWRHeader from '../components/UWRHeader';
 import { palette } from '../styling/theme';
+import TeamAnnouncementBox from '../components/TeamAnnouncement';
+import Schedule from '../components/Schedule'
 
 
 function Team7() {
@@ -24,11 +26,9 @@ function Team7() {
              {/* Where Should We Be Section */}
             <Flex direction="column" p="6" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} marginTop={20} borderColor={palette.dtxGold}>
                 <Heading as="h2" size="md" mb="2" color="white">
-                            📍Where Should We Be📍
+                📢 Announcements 📢
                 </Heading>
-                    <Text color="white">
-                     Section 3 Body Text. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </Text>
+                <TeamAnnouncementBox team = 'uw'/>
             </Flex>
 
                                 {/* Liason Contacts Section */}
@@ -46,11 +46,9 @@ function Team7() {
 {/* Announcements Section */}
 <Flex direction="column"  p="6" mt="2" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} borderColor={palette.dtxGold } align="center" justify="center">
     <Heading as="h2" size="md" mb="2" color="white">
-    📢 Announcements 📢
+    📍Schedule📍
     </Heading>
-    <Text color="white">
-      Please dm rishil uppaluru now (single non 800lb females only)
-    </Text>
+    <Schedule scheduleName='scheduleuw'/>
   </Flex>
 </Flex>
 

@@ -4,6 +4,8 @@ import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, G
 import MWHeader from '../components/MWHeader';
 import { palette } from '../styling/theme';
 import hero_p3 from '../pics/hero_p3.png';
+import TeamAnnouncementBox from '../components/TeamAnnouncement';
+import Schedule from '../components/Schedule'
 
 function Team3() {
   return (
@@ -30,11 +32,9 @@ function Team3() {
              {/* Where Should We Be Section */}
             <Flex direction="column" p="6" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} marginTop={20} borderColor={palette.dtxGold}>
                 <Heading as="h2" size="md" mb="2" color="white">
-                            📍Where Should We Be📍
+                📢 Announcements 📢
                 </Heading>
-                    <Text color="white">
-                     Section 3 Body Text. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </Text>
+                <TeamAnnouncementBox team ='wolw'/>
             </Flex>
 
                                 {/* Liason Contacts Section */}
@@ -52,11 +52,9 @@ function Team3() {
 {/* Announcements Section */}
 <Flex direction="column"  p="6" mt="2" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} borderColor={palette.dtxGold } align="center" justify="center">
     <Heading as="h2" size="md" mb="2" color="white">
-    📢 Announcements 📢
+    📍Schedule📍
     </Heading>
-    <Text color="white">
-      Please dm rishil uppaluru now (single non 800lb females only)
-    </Text>
+    <Schedule scheduleName= 'schedulewolw' />
   </Flex>
 </Flex>
 
