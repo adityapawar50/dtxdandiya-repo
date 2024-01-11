@@ -4,6 +4,8 @@ import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, S
 import DSDHeader from '../components/DSDHeader';
 import { palette } from '../styling/theme';
 import Schedule from '../components/Schedule'
+import TeamAnnouncement from '../components/TeamUpdateBox'
+import hippo from '../pics/fathippo.png'
 
 
 function Team1() {
@@ -27,6 +29,7 @@ function Team1() {
                     <Heading as="h2" size="md" mb="2" color="white">
                                 📢 Announcements 📢
                     </Heading>
+                    <TeamAnnouncement imageSrc={hippo} team = 'dsd'/>
                         <Text color="white">
                          Section 3 Body Text. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </Text>
@@ -50,9 +53,7 @@ function Team1() {
     📍Schedule📍
     </Heading>
     <Schedule scheduleName={"scheduledsd"}/>
-    <Text color="white">
-      Please dm rishil uppaluru now (single non 800lb females only)
-    </Text>
+
   </Flex>
 </Flex>
 

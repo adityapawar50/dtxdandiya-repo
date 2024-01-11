@@ -41,8 +41,8 @@ const NavBar = (props) => {
       top="0"
       h="12%"
     >
-      <Box mr="4%" w="80px">
-        <img src={MWLogo} alt="Logo" h="10px" w="10px" />
+      <Box mr="4%" w="100px">
+        <img src={MWLogo} alt="Logo" h="30px" w="30px" />
       </Box>
 
       <DrawerToggle toggle={toggle} isOpen={isOpen} />
