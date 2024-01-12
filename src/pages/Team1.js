@@ -1,4 +1,3 @@
-import { ChakraProvider } from '@chakra-ui/react';
 import * as React from 'react';
 import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Spacer } from '@chakra-ui/react';
 import DSDHeader from '../components/DSDHeader';
@@ -15,7 +14,6 @@ function Team1() {
         <VStack align="center" justify="center" spacing="10px" h="100%">
           <DSDHeader />
 
-            <ChakraProvider>
             <Container maxW="container.xl">
               <Flex direction="column" w="100%">
                   {/* First Section */}
@@ -94,7 +92,6 @@ function Team1() {
                     
                   </Flex>
               </Container>
-            </ChakraProvider>
         </VStack>
       </Flex>
     );

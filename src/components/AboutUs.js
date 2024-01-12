@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import {
-  Box, VStack, Heading, HStack, Button,Flex,Text, useMediaQuery, Divider,Card, CardBody, Stack} from "@chakra-ui/react";
+  Box, VStack, Heading, Image, HStack, Button,Flex,Text, useMediaQuery, Divider,Card, CardBody, Stack} from "@chakra-ui/react";
 import { palette } from "../styling/theme";
 import ap from "../pics/exectogether/ap.jpg"
 import directors from "../pics/exectogether/directors.jpg"
@@ -95,17 +95,20 @@ const AboutUs = () => {
         return committeeDirectors.map((director, index) => {
           if (index === 0) {
             return (
-              <Card key={index} maxW={isLargerThan768 ? 'md' :'full'}>
+              <Card key={index} maxW={isLargerThan768 ? 'md' :'full'}
+              bg={palette.bgDarkGreen}
+              style={{ border: '2px solid #CCA176', borderRadius: 'md' }}
+              >
                 <CardBody>
                   <LazyLoadImage
                     src={director.image}
                     alt={director.name}
                     effect="blur"
-                    style={{ borderRadius: 'lg', maxWidth: '100%' }}
-                    visibleByDefault={isLargerThan768}
+                    style={{ borderRadius: 'lg', maxWidth: '100%', maxHeight : "400px"}}
+                    // visibleByDefault={isLargerThan768}
                   />
                   <Stack mt="6" spacing="3">
-                    <Heading size="md" fontFamily="Times New Roman">{director.name}</Heading>
+                    <Heading color = {palette.dtxGold} size="md" >{director.name}</Heading>
                     {/* No description in your data */}
                     {/* <Text>{director.description}</Text> */}
                   </Stack>
@@ -179,8 +182,8 @@ const AboutUs = () => {
   {generateCards()}
 </HStack>
         <Flex justify="space-between" w="20%" mt="20px">
-          <Button onClick={handleLeftArrowClick}>&#8249;</Button>
-          <Button onClick={handleRightArrowClick}>&#8250;</Button>
+          <Button  bg = {palette.dtxGold} onClick={handleLeftArrowClick}>&#8249;</Button>
+          <Button bg = {palette.dtxGold} onClick={handleRightArrowClick}>&#8250;</Button>
         </Flex>
       </VStack>
     </Box>

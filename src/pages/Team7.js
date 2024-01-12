@@ -1,4 +1,3 @@
-import { ChakraProvider } from '@chakra-ui/react';
 import * as React from 'react';
 import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer } from '@chakra-ui/react';
 import UWRHeader from '../components/UWRHeader';
@@ -12,8 +11,7 @@ function Team7() {
     <Flex direction="column" bg={palette.bgDarkGreen} w="100vw" h="100%">
     <VStack align="center" justify="center" spacing="10px" h="100%">
       <UWRHeader />
-
-        <ChakraProvider>
+  
         <Container maxW="container.xl">
           <Flex direction="column" w="100%">
               {/* First Section */}
@@ -88,7 +86,7 @@ sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                 
               </Flex>
           </Container>
-        </ChakraProvider>
+       
     </VStack>
   </Flex>
 );
