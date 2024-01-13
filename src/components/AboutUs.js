@@ -57,12 +57,16 @@ const AboutUs = () => {
     const handleLeftArrowClick = () => {
       if (displayedCommittee > 0) {
         setDisplayedCommittee(displayedCommittee - 1);
+      }else{
+        setDisplayedCommittee(currentCommittee.length)
       }
     };
   
     const handleRightArrowClick = () => {
       if (displayedCommittee < committees.length - 1) {
         setDisplayedCommittee(displayedCommittee + 1);
+      } else{
+        setDisplayedCommittee(0)
       }
     };
   
