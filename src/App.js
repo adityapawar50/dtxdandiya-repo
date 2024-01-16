@@ -13,6 +13,7 @@ import TeamPortal from './pages/TeamPortal';
 import AdminPage from './pages/AdminPage';
 import PageNotFound from './pages/PageNotFound';
 import LoginPopup from './pages/LoginPopup';
+import Login from './pages/NewLogin'
 import Team1 from './pages/Team1';
 import Team2 from './pages/Team2';
 import Team3 from './pages/Team3';
@@ -25,6 +26,7 @@ import ExecPortal from './pages/ExecPortal';
 import '@fontsource/raleway/900.css'
 import '@fontsource/bebas-neue/400.css'
 import '@fontsource/sigmar-one/400.css'
+import NewLogin from './pages/NewLogin';
 
 
 
@@ -41,11 +43,11 @@ function App() {
             <Route path="/resources" element={<Resources/>} />
             <Route path="/sponsors" element={<Sponsors/>} />
             <Route path="/map" element={<VenueMap/>} />
-            <Route path="/teamportal" element={<TeamPortal/>} />
+            <Route path="/teamportal" element={<NewLogin/>} />
             <Route path="/admin" element={<AdminPage/> }/>
             <Route path="/app" element={<App />} />
             <Route path="*" element={<PageNotFound/>} />
-            <Route path ="/login" element={<LoginPopup/>} />
+            <Route path ="/login" element={<NewLogin/>} />
             <Route path="/team1" element={<Team1/>} />
             <Route path="/team2" element={<Team2/>} />
             <Route path="/team3" element={<Team3/>} />
