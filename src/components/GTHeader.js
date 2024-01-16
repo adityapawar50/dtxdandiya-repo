@@ -106,9 +106,6 @@ const MenuLinks = ({ isOpen, handleTeamChange }) => {
         <MenuItem to="/teamportal" color={palette.dtxGold}>
           Team Portal
         </MenuItem>
-        <MenuItem to="/map" color={palette.dtxGold}>
-          Venue Map
-        </MenuItem>
       </Stack>
     </Box>
   );

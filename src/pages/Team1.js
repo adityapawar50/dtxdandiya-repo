@@ -11,12 +11,12 @@ import Footer from '../components/Footer'
 
 function Team1() {
     return (
-        <Flex direction="column" bg={palette.bgDarkGreen} w="100vw" h="100%">
-        <VStack align="center" justify="center" spacing="10px" h="100%">
+        <Flex direction="column" bg={palette.bgDarkGreen} w="100vw">
+        <VStack align="center" justify="center" spacing="10px"  h="100%" >
           <DSDHeader />
 
-            <Container maxW="container.xl">
-              <Flex direction="column" w="100%">
+            <Container maxW="container.xl" bg={palette.bgDarkGreen} minHeight="90vh">
+              <Flex direction="column" w="100%" bg={palette.bgDarkGreen}>
                   <Flex minH = '70px' p="4" textDecoration="underline" marginTop={10} borderColor={palette.dtxGold} align="center" justify="center">
                     <Heading as="h2" size="lg" mb="2" color="orange.500">
                       

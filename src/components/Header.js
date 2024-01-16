@@ -39,6 +39,7 @@ const NavBar = (props) => {
       <Link to="/">
             <img src={dtxlogo} alt="Logo"  />
       </Link>
+      
       </Box>
 
       {/* <MenuToggle toggle={toggle} isOpen={isOpen} /> */}

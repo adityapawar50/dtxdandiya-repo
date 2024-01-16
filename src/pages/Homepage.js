@@ -26,7 +26,7 @@ function Homepage() {
         <VStack align="center" justify="center" spacing="10px" >
           <Header />
           
-          <Box w = "100%">
+          <Box w = "100%" justify="center" align="center">
             {imageComponent}
           </Box>
           

@@ -20,7 +20,7 @@ import titlepagehero from '../pics/titlepagehero.png'
 
 export default function HeroWithPic() {
   return (
-    <Flex bg ={palette.bgDarkGreen} w = "100%">
+    <Flex bg ={palette.bgDarkGreen} w = "100%" justify="center" align="center">
    
       <Box w = '100%'>
                 <img src={hero_p2} alt="Logo"  />

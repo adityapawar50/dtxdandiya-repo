@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import customTheme from './styling/theme'
 import Homepage from './pages/Homepage';
 import Resources from './pages/Resources';
-import VenueMap from './pages/VenueMap';
 import TeamPortal from './pages/TeamPortal';
 import AdminPage from './pages/AdminPage';
 import PageNotFound from './pages/PageNotFound';
@@ -36,7 +35,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage/>} />
             <Route path="/resources" element={<Resources/>} />
-            <Route path="/map" element={<VenueMap/>} />
             <Route path="/teamportal" element={<TeamPortal/>} />
             <Route path="/admin" element={<AdminPage/> }/>
             <Route path="/app" element={<App />} />

@@ -12,8 +12,8 @@ function Team6() {
     <VStack align="center" justify="center" spacing="10px" h="100%">
       <UCBRHeader />
 
-        <Container maxW="container.xl">
-          <Flex direction="column" w="100%">
+        <Container maxW="container.xl" bg={palette.bgDarkGreen} minHeight="90vh">
+          <Flex direction="column" w="100%" >
             <Flex minH = "70px" p="4" textDecoration="underline" marginTop={10} borderColor={palette.dtxGold} align="center" justify="center">
               </Flex>
               {/* First Section */}

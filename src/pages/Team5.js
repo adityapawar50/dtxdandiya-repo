@@ -12,7 +12,7 @@ function Team5() {
     <VStack align="center" justify="center" spacing="10px" h="100%">
       <WUHeader />
 
-        <Container maxW="container.xl">
+        <Container maxW="container.xl" bg={palette.bgDarkGreen} minHeight="90vh">
           <Flex direction="column" w="100%">
               <Flex minH = "70px" p="4" textDecoration="underline" marginTop={10} borderColor={palette.dtxGold} align="center" justify="center">
               </Flex>
