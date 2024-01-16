@@ -8,6 +8,7 @@ import MenuDrawer from "./MenuDrawer";
 
 
 
+
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedTeam, setSelectedTeam] = React.useState("");
@@ -34,8 +35,10 @@ const NavBar = (props) => {
         top="0"
         h = '12%'
     >
-      <Box mr="4%" w ={{ base: '50px', sm: '80px' }}>
-        <img src={dtxlogo} alt="Logo" h="10px" w = "10px" />
+      <Box mr="4%" w ={{ base: '70px', sm: '100px' }}>
+      <Link to="/">
+            <img src={dtxlogo} alt="Logo"  />
+      </Link>
       </Box>
 
       {/* <MenuToggle toggle={toggle} isOpen={isOpen} /> */}
@@ -97,26 +100,16 @@ const MenuLinks = ({ isOpen, handleTeamChange }) => {
         direction={["column", "row", "row", "row"]}
         pt={[0, 0, 0, 0]}
       >
-        <MenuItem to="/" color={palette.dtxGold}>
+        <MenuItem to="/" color={palette.dtxGold} fontSize="20px">
           Home
         </MenuItem>
-        <MenuItem to="/resources" color={palette.dtxGold}>
+        <MenuItem to="/resources" color={palette.dtxGold} fontSize="20px">
           Resources
         </MenuItem>
-        <MenuItem to="/teamportal" color={palette.dtxGold}>
+        <MenuItem to="/teamportal" color={palette.dtxGold} fontSize="20px">
           Team Portal
         </MenuItem>
-        <MenuItem to="/map" color={palette.dtxGold}>
-          Venue Map
-        </MenuItem>
-        <Flex isLast align="center" flex="1">
-          <Box mr="4" h="50%" w="30px">
-            <img src={instaIcon} alt="Logo" h="10px" w="10px" onClick={openInstagram} />
-          </Box>
-          <Box mr="4" h="50%" w="30px">
-            <img src={tiktokIcon} alt="Logo" h="10px" w="10px" onClick={openTiktok} />
-          </Box>
-        </Flex>
+       
       </Stack>
     </Box>
   );

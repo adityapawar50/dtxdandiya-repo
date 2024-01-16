@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button,MenuButton, Stack, Select, } from "@chakra-ui/react";
 import { palette } from '../styling/theme';
-import wulogo from '../pics/WULogo.png'
+import wulogo from '../pics/WRLogo.png'
 import instaIcon from "../pics/instagram.png"
 import tiktokIcon from "../pics/tiktok.png"
 import MenuDrawer from "./MenuDrawer";
@@ -34,7 +34,7 @@ const NavBar = (props) => {
         top="0"
         h = '12%'
     >
-      <Box mr="4%" w ={{ base: '50px', sm: '80px' }}>
+      <Box mr="4%" w ={{ base: '60px', sm: '80px' }}>
         <img src={wulogo} alt="Logo" h="10px" w = "10px" />
       </Box>
 
@@ -106,17 +106,6 @@ const MenuLinks = ({ isOpen, handleTeamChange }) => {
         <MenuItem to="/teamportal" color={palette.dtxGold}>
           Team Portal
         </MenuItem>
-        <MenuItem to="/map" color={palette.dtxGold}>
-          Venue Map
-        </MenuItem>
-        <Flex isLast align="center" flex="1">
-          <Box mr="4" h="50%" w="30px">
-            <img src={instaIcon} alt="Logo" h="10px" w="10px" onClick={openInstagram} />
-          </Box>
-          <Box mr="4" h="50%" w="30px">
-            <img src={tiktokIcon} alt="Logo" h="10px" w="10px" onClick={openTiktok} />
-          </Box>
-        </Flex>
       </Stack>
     </Box>
   );

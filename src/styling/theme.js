@@ -28,7 +28,12 @@ const customTheme = extendTheme({
     dtxGreen : "#647B54",
     dtxBrown : "#986859",
     dtxGold : "#CCA176",
-    bgDarkGreen: "#040c05"
+    bgDarkGreen: "#040c05",
+    shinyGold : "#e8b923",
+    shinySilver : "#E0E5E8",
+    shinyBronze : "#b87333",
+    footColor : "#000000"
+
 }
 
   export default customTheme

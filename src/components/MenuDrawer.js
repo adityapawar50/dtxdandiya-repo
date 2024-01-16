@@ -86,7 +86,7 @@ const MenuDrawer = () => {
               <Box mr="4" h="50%" w="30px">
                 <img src={instaIcon} alt="Logo" h="10px" w="10px" onClick={openInstagram} />
               </Box>
-              <Box mr="4" h="50%" w="30px">
+              <Box mr="0" h="50%" w="30px" >
                 <img src={tiktokIcon} alt="Logo" h="10px" w="10px" onClick={openTiktok} />
               </Box>
               

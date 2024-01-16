@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import {
-  Box, VStack, Heading, Image, HStack, Button,Flex,Text, useMediaQuery, Divider,Card, CardBody, Stack} from "@chakra-ui/react";
+import {Box, VStack, Heading, Image, HStack, Button,Flex,Text, useMediaQuery, Divider,Card, CardBody, Stack} from "@chakra-ui/react";
 import { palette } from "../styling/theme";
 import ap from "../pics/exectogether/ap.jpg"
 import directors from "../pics/exectogether/directors.jpg"
@@ -186,8 +185,8 @@ const AboutUs = () => {
   {generateCards()}
 </HStack>
         <Flex justify="space-between" w="20%" mt="20px">
-          <Button  bg = {palette.dtxGold} onClick={handleLeftArrowClick}>&#8249;</Button>
-          <Button bg = {palette.dtxGold} onClick={handleRightArrowClick}>&#8250;</Button>
+          <Button  mr = "5%" bg = {palette.dtxGold} onClick={handleLeftArrowClick}>&#8249;</Button>
+          <Button ml = "5%" bg = {palette.dtxGold} onClick={handleRightArrowClick}>&#8250;</Button>
         </Flex>
       </VStack>
     </Box>

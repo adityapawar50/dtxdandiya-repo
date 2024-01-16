@@ -8,7 +8,8 @@ import CurrUpdatesBox from "../components/CurrUpdatesBox"
 import Header from '../components/Header'
 import { palette } from '../styling/theme'
 import Announcement from '../components/Announcement'
-
+import Sponsors from '../components/Sponsors'
+import Footer from '../components/Footer'
 
 
 
@@ -41,17 +42,14 @@ function Homepage() {
                 </Wrap>
               
               <AboutUs/>
-
-              <Box p="4">'About Us'</Box>
-              <Box p="4">Sponsors</Box>
+              <Sponsors/>
 
             </VStack>
             
           </Flex>
 
-
-          
-        </VStack>  
+        </VStack> 
+         <Footer/>
     </Box>
 
     );
