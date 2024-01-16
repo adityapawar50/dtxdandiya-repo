@@ -34,7 +34,7 @@ const NavBar = (props) => {
         top="0"
         h = '12%'
     >
-      <Box mr="4%" w ={{ base: '50px', sm: '80px' }}>
+      <Box mr="4%" w ={{ base: '70px', sm: '100px' }}>
         <img src={dsdlogo} alt="Logo" h="10px" w = "10px" />
       </Box>
 
@@ -74,7 +74,7 @@ const DrawerToggle = ({ toggle, isOpen }) => {
   );
 };
 
-const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
+const MenuItem = ({ children, islast, to = "/", ...rest }) => {
   return (
     <Link href={to}>
       <Text display="block" {...rest}>
@@ -106,17 +106,6 @@ const MenuLinks = ({ isOpen, handleTeamChange }) => {
         <MenuItem to="/teamportal" color={palette.dtxGold}>
           Team Portal
         </MenuItem>
-        <MenuItem to="/map" color={palette.dtxGold}>
-          Venue Map
-        </MenuItem>
-        <Flex isLast align="center" flex="1">
-          <Box mr="4" h="50%" w="30px">
-            <img src={instaIcon} alt="Logo" h="10px" w="10px" onClick={openInstagram} />
-          </Box>
-          <Box mr="4" h="50%" w="30px">
-            <img src={tiktokIcon} alt="Logo" h="10px" w="10px" onClick={openTiktok} />
-          </Box>
-        </Flex>
       </Stack>
     </Box>
   );

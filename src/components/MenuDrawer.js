@@ -4,6 +4,8 @@ import * as React from 'react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+import tiktokIcon from "../pics/tiktok.png"
+import instaIcon from "../pics/instagram.png"
 
 import {
     Drawer,
@@ -19,6 +21,14 @@ import {
 const MenuDrawer = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
+
+    const openInstagram = () => {
+      window.open("https://www.instagram.com/dtx.dandiya/?hl=en", "_blank");
+    };
+    
+    const openTiktok = () => {
+      window.open("https://www.tiktok.com/@dtx.dandiya", "_blank");
+    };
   
     return (
       <>
@@ -47,7 +57,7 @@ const MenuDrawer = () => {
           h="100vh"
           bg = {palette.bgDarkGreen}
           >
-            <DrawerCloseButton color = {palette.dtxGold}/>
+            <DrawerCloseButton size = "lg" color = {palette.dtxGold}/>
             <DrawerHeader
             color = {palette.dtxGold}
             align = "stretch"
@@ -73,9 +83,13 @@ const MenuDrawer = () => {
             </DrawerBody>
   
             <DrawerFooter>
-              <Button variant='solid' mr={3} bg ={palette.dtxGold} onClick={onClose}>
-                Close
-              </Button>
+              <Box mr="4" h="50%" w="30px">
+                <img src={instaIcon} alt="Logo" h="10px" w="10px" onClick={openInstagram} />
+              </Box>
+              <Box mr="0" h="50%" w="30px" >
+                <img src={tiktokIcon} alt="Logo" h="10px" w="10px" onClick={openTiktok} />
+              </Box>
+              
             </DrawerFooter>
           </DrawerContent>
         </Drawer>

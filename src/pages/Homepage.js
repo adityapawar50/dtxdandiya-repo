@@ -8,7 +8,8 @@ import CurrUpdatesBox from "../components/CurrUpdatesBox"
 import Header from '../components/Header'
 import { palette } from '../styling/theme'
 import Announcement from '../components/Announcement'
-
+import Sponsors from '../components/Sponsors'
+import Footer from '../components/Footer'
 
 
 
@@ -25,7 +26,7 @@ function Homepage() {
         <VStack align="center" justify="center" spacing="10px" >
           <Header />
           
-          <Box w = "100%">
+          <Box w = "100%" justify="center" align="center">
             {imageComponent}
           </Box>
           
@@ -41,17 +42,14 @@ function Homepage() {
                 </Wrap>
               
               <AboutUs/>
-
-              <Box p="4">'About Us'</Box>
-              <Box p="4">Sponsors</Box>
+              <Sponsors/>
 
             </VStack>
             
           </Flex>
 
-
-          
-        </VStack>  
+        </VStack> 
+         <Footer/>
     </Box>
 
     );
