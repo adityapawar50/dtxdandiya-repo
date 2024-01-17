@@ -36,9 +36,9 @@ const NavBar = (props) => {
         h = '12%'
     >
       <Box mr="4%" w ={{ base: '70px', sm: '100px' }}>
-      <Link to="/">
+      <MenuItem to="/">
             <img src={dtxlogo} alt="Logo"  />
-      </Link>
+      </MenuItem>
       
       </Box>
 
