@@ -75,9 +75,6 @@ const MenuDrawer = () => {
                 <ChakraLink as={RouterLink} to="/portal">
                   <Button colorScheme="transparent" to="/" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl" mr = "auto">Team Portal </Button>
                 </ChakraLink>
-                <ChakraLink as={RouterLink} to="/map">
-                  <Button colorScheme="transparent" to="/" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl" mr = "auto">Venue Map </Button>
-                </ChakraLink>
             
               </VStack>
             </DrawerBody>

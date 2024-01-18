@@ -68,17 +68,23 @@ const AdminScheduler = () =>{
       const docRef = doc(db, 'comp', sched, collectionName, 'sched');
 
       const orderedUpdatedData = orderData(updatedEvents,updatedLocations, updatedTimes);
+
+      if (orderedUpdatedData != -1){
+        await setDoc(docRef, {
+          what: orderedUpdatedData.whatArr,
+          where: orderedUpdatedData.whereArr,
+          when: orderedUpdatedData.whenArr,
+        });
+  
+  
+  
+        console.log("doc updated")
+      } else{
+        alert("data inputted wrong, watch the timing format")
+      }
       
 
-      await setDoc(docRef, {
-        what: orderedUpdatedData.whatArr,
-        where: orderedUpdatedData.whereArr,
-        when: orderedUpdatedData.whenArr,
-      });
-
-
-
-      console.log("doc updated")
+     
     }
 
 
@@ -201,28 +207,43 @@ const AdminScheduler = () =>{
 
     const getTimeData = (timeString) =>{
       const str = timeString.toLowerCase();
-      const regexTime = /^(.*?):(..)/;
+      const regexTime = /(\d{1,2}):(\d{2})\s*([apm])/;
       const regexPartOfDay = /(am|pm)/;
+      const regexDash = /-/;
 
-      const matchResult = str.match(regexTime);
-      const hour = matchResult[1]
-      const mins = matchResult[2]
+      const indexOfDash = str.search(regexDash);
+      if (indexOfDash !== -1) {
+        const newString = str.slice(0, indexOfDash);
 
-      const matchResult2 = str.match(regexPartOfDay);
-      if (matchResult) {
+
+        const isValid = regexTime.test(newString);
+        
+        if (!isValid){
+          console.log("error")
+          return -1;
+        }
+
+        const matchResult = str.match(regexTime);
+        const hour = matchResult[1]
+        const mins = matchResult[2]
+
+        const matchResult2 = str.match(regexPartOfDay);
+        
         const amOrPm = matchResult2[0];
 
         var score = parseInt(hour) + (parseFloat(mins)/60);
 
-        if (amOrPm == "pm"){
-          score += 20;
-        }
+      if (amOrPm == "pm"){
+        score += 20;
+      }
 
-        return score;
+      return score;
 
       } else {
-        alert('put in AM or PM and FOLLOW THE FORMAT');
+        console.log("No dash found in the string.");
+        return -1;
       }
+      
 
     }
     
@@ -232,7 +253,11 @@ const AdminScheduler = () =>{
 
         for (let i = 0; i < arrLen; i++){
           const timeString = when[i];
-          scoreArr[i] = [getTimeData(timeString),i];
+          const timeData = getTimeData(timeString)
+          if (timeData == -1){
+            return -1;
+          }
+          scoreArr[i] = [timeData,i];
         }
 
         scoreArr.sort(function(a, b) {

@@ -75,21 +75,22 @@ const CurrUpdatesBox = () =>{
     return(
     <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center"  align = "center">
       <Card
-        direction={{ base: 'column', sm: 'row' }}
+        direction={{ base: 'row', sm: 'row' }}
         overflow='hidden'
         variant='outline'
         w={{ base: '70%', sm: '500px'}}
         bg = {palette.bgDarkGreen}
         borderColor={palette.dtxGold}
         borderWidth='4px'
+        minW = "350px"
         
       >
         <Image
           src = {julianpic}
           borderRadius='0'
           objectFit='cover'
-          maxW={{ base: '100%', sm: '200px' }}
-          maxH = {{ base: '90px', sm: '100%' }}
+          maxW={{ base: '40%', sm: '200px' }}
+          maxH = {{ base: '100%', sm: '100%' }}
         />
 
         <Stack >
