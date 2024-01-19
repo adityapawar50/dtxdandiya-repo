@@ -34,8 +34,11 @@ const NavBar = (props) => {
         top="0"
         h = '12%'
     >
-      <Box mr="4%" w ={{ base: '80px', sm: '100px' }}>
-        <img src={michlogo} alt="Logo" h="10px" w = "10px" />
+      <Box mr="4%" w ={{ base: '70px', sm: '100px' }}>
+        <MenuItem to="/">
+              <img src={michlogo} alt="Logo"  />
+        </MenuItem>
+      
       </Box>
 
       {/* <MenuToggle toggle={toggle} isOpen={isOpen} /> */}

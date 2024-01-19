@@ -235,6 +235,14 @@ const AdminScheduler = () =>{
 
       if (amOrPm == "pm"){
         score += 20;
+
+        if (parseInt(hour) == 12){
+          score -= 20;
+        }
+      }else{
+        if (parseInt(hour) == 12){
+          score +=20;
+        }
       }
 
       return score;
@@ -395,7 +403,6 @@ const AdminScheduler = () =>{
           </MenuButton>
           <MenuList>
             <MenuItem onClick={()=> handleSelectOption("Homepage")}>Homepage Schedule </MenuItem>
-            <MenuItem onClick={()=> handleSelectOption("exec")}>Exec</MenuItem>
             <MenuItem onClick={()=> handleSelectOption("DSD")}>DSD</MenuItem>
             <MenuItem onClick={()=> handleSelectOption("UW Raas")}>UW Raas</MenuItem>
             <MenuItem onClick={()=> handleSelectOption("WolverRaas")}>WolveRaas</MenuItem>
@@ -436,7 +443,8 @@ const AdminScheduler = () =>{
                   color = {palette.dtxGold}
                 >
                   <HStack justify = "center" spacing = "10%" >
-                    <Button variant='outline' mr={3} colorScheme ={palette.dtxGold} onClick={deleteRows} >
+                    <Button variant='outline' mr={3} colorScheme ={palette.dtxGold} onClick={deleteRows}
+                     >
                       delete
                     </Button>
   
@@ -460,7 +468,7 @@ const AdminScheduler = () =>{
                   {compDay ?
                   eventsFri.map((event, indexFri) => (
                     <Tr key={indexFri}>
-                      <Td>
+                      <Td >
                         <Editable 
                         key={`${compDay}-${eventsFri[indexFri]}`}
                         defaultValue={eventsFri[indexFri]}

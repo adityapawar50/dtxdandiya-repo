@@ -19,9 +19,9 @@ function Team5() {
               {/* First Section */}
               <Flex p="4" marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
                 <Heading as="h2" size="lg" mb="2">
-                <span style={{ color:"red" }}> Welcome</span>
-                <span style={{ color: 'white' }}>   WashU</span>
-                <span style={{ color:"green" }}>   Raas!</span>
+                <span style={{ color:"#a51417" }}> Welcome</span>
+                <span style={{ color: '#6c7373' }}>   WashU</span>
+                <span style={{ color:"#c8c8c8" }}>   Raas!</span>
                 </Heading>
               </Flex>
 

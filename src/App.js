@@ -42,13 +42,13 @@ function App() {
             <Route path="/app" element={<App />} />
             <Route path="*" element={<PageNotFound/>} />
             <Route path ="/login" element={<NewLogin/>} />
-            <Route path="/team1" element={<Team1/>} />
-            <Route path="/team2" element={<Team2/>} />
-            <Route path="/team3" element={<Team3/>} />
-            <Route path="/team4" element={<Team4/>} />
-            <Route path="/team5" element={<Team5/>} />
-            <Route path="/team6" element={<Team6/>} />
-            <Route path="/team7" element={<Team7/>} />
+            <Route path="/junglebook" element={<Team1/>} />
+            <Route path="/schoolhouse" element={<Team2/>} />
+            <Route path="/boardgames" element={<Team3/>} />
+            <Route path="/hollywood" element={<Team4/>} />
+            <Route path="/eiffel" element={<Team5/>} />
+            <Route path="/spain" element={<Team6/>} />
+            <Route path="/smores" element={<Team7/>} />
           </Routes>
       </Router>
       </div>

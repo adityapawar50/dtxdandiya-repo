@@ -133,7 +133,7 @@ const AboutUs = () => {
 
   return (
     <Box w="100%" mt="50">
-      <VStack w="100%" mt="60px">
+      <VStack w="100%" mt="30px">
         <Flex
           w="50%"
           borderWidth="4px"
@@ -148,26 +148,15 @@ const AboutUs = () => {
           <Text
             py="2"
             color={palette.dtxGold}
-            w="70%"
+            w="80%"
             justify="center"
             align="center"
-            fontSize={{ base: "md", md: "lg", lg: "xl" }}
+            fontSize={{ base: "sm", md: "lg", lg: "xl" }}
           >
-            Welcome to the heart of Dallas, where the vibrant rhythms of
-            tradition meet the beats of unity at our annual Raas Garba
-            competition. As a flagship event hosted by our college, this
-            cultural extravaganza is more than just a celebration; it's a
-            spirited endeavor to bring our community together. Rooted in the
-            rich tapestry of Indian culture, our Raas Garba competition takes
-            center stage as a dynamic showcase of dance, music, and tradition.
-            With every graceful twirl and resonating drumbeat, we aim to create
+            Howdy Y'all! We welcome you to DTX Dandiya. We are Dallas's premier Raas Garba competition, bringing together some of the very 
+            best colliegete Raas teams from around the country. With every graceful twirl and resonating drumbeat, we aim to create
             an immersive experience that not only honors our heritage but also
-            fosters a sense of togetherness. Join us in the celebration of
-            diversity, the joy of dance, and the spirit of community as we
-            embrace the true essence of Raas Garba in the heart of Dallas. Let
-            the rhythm of unity and cultural pride resonate as we come together
-            to weave the threads of tradition in the colorful fabric of our
-            shared heritage.
+            fosters a sense of togetherness. Join us in embracing diversity, the joy of dance, and the spirit of community as we weave tradition into the colorful fabric of our shared heritage.
           </Text>
         </Flex>
         <Flex

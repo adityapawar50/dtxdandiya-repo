@@ -51,7 +51,7 @@ const TeamAnnouncementBox = ({team}) =>{
             mr={{ base: 4, md: 8 }} // Margin right for spacing between image and text
         />
         <Text
-        fontSize={{ base: 'xl', md: "lg", lg: "xl" }}>
+        fontSize={{ base: 'sm', md: "lg", lg: "xl" }}>
             {announcement}
         </Text>
     </Flex>

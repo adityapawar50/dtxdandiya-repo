@@ -98,9 +98,10 @@ const MainSchedule = ({ scheduleName }) =>{
 
 
   return(
-  <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center" >
+  <Flex bg ={palette.bgDarkGreen} color = {palette.dtxGold}  w = "100%" justify = "center" overflowX="auto" >
+            <Box overflowX={'scroll'}>
             <TableContainer >
-            <Table variant='simple'  size={{ base: "sm", md: "lg", lg: "lg" }} colorScheme={palette.dtxGold}>
+            <Table variant='simple' size={{ base: "sm", md: "lg", lg: "lg" }} colorScheme={palette.dtxGold} overflow={'scroll'} >
 
               <TableCaption
                 placement="top"
@@ -128,7 +129,7 @@ const MainSchedule = ({ scheduleName }) =>{
               {compDay 
               ? eventsFri.map((event, index) => (
                 <Tr key={index}>
-                  <Td>{eventsFri[index]}</Td>
+                  <Td >{eventsFri[index]}</Td>
                   <Td>{locationsFri[index]}</Td>
                   <Td>{timesFri[index]}</Td>
                 </Tr>
@@ -143,7 +144,8 @@ const MainSchedule = ({ scheduleName }) =>{
               }
               </Tbody>
             </Table>
-          </TableContainer>  
+          </TableContainer> 
+          </Box> 
   
     </Flex>
   );

@@ -29,39 +29,38 @@ function NewLogin() {
   const handleLogin = () => {
     // Perform a conditional check based on the entered password
     switch (password) {
-      case "gloriatexasraas2024":
+      case process.env.REACT_APP_TEXAS_PASS:
         // Redirect to Team 1 portal
-        navigate("/team1");
-        console.log('this happenend')
+        navigate("/junglebook");
         break;
-      case "kingjulianramblinraas":
+      case process.env.REACT_APP_GT_PASS:
         // Redirect to Team 2 portal
-        navigate("/team2");
+        navigate("/schoolhouse");
         break;
-      case "martywolveraas":
+      case process.env.REACT_APP_WOLW:
         // Redirect to Team 3 portal
-        navigate("/team3");
+        navigate("/boardgames");
         break;
-      case "alexwreckinraas":
+      case process.env.REACT_APP_TAMU:
         // Redirect to Team 4 portal
-        navigate("/team4");
+        navigate("/hollywood");
         break;
-      case "mortwashu":
+      case process.env.REACT_APP_WASHU:
         // Redirect to Team 5 portal
-        navigate("/team5");
+        navigate("/eiffel");
         break;
-      case "penguinsramzat":
+      case process.env.REACT_APP_UCB:
         // Redirect to Team 6 portal
-        navigate("/team6");
+        navigate("/spain");
         break;
-      case "melmanuwraas":
+      case process.env.REACT_APP_UW:
         // Redirect to Team 7 portal
-        navigate("/team7");
+        navigate("/smores");
         break;
       default:
         // Handle incorrect password or other cases
         // For now, just log an error
-        console.error("Incorrect password");
+        alert("Incorrect password");
         break;
     }
   };
@@ -131,19 +130,7 @@ function NewLogin() {
     <Button bg={palette.dtxGold} mb={8}  onClick={handleLogin}>
       Log In
     </Button>
-    <FormControl display="flex" alignItems="center">
-      <FormLabel htmlFor="dark_mode" mb="0">
-        Enable Moto moto Mode?
-      </FormLabel>
-      <Switch
-        id="dark_mode"
-        colorScheme="teal"
-        size="lg"
-        onChange={() => {
-          console.log('hi');
-        }}
-      />
-    </FormControl>
+
   </Flex>
 </Flex>
 

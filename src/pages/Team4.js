@@ -40,7 +40,7 @@ function Team4() {
          <UnorderedList mt="2" color="white">
           <ListItem>Aayushi Madiala: 512-773-0779</ListItem>
          <ListItem>Sakshi Ratnaparkhi: 469-664-1877</ListItem>
-        <ListItem>Deva RajeevNair: 817-962-7661</ListItem>
+        <ListItem>Deva Nair: 817-962-7661</ListItem>
          </UnorderedList>
              </Flex>
 

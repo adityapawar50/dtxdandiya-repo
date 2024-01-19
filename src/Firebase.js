@@ -14,15 +14,7 @@ import 'firebase/auth'; // import the authentication module
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDGTOjWXiSK1E6_hNrUfGRV3mr8uNRmKEs",
-//   authDomain: "dtx-dandiya-80dde.firebaseapp.com",
-//   projectId: "dtx-dandiya-80dde",
-//   storageBucket: "dtx-dandiya-80dde.appspot.com",
-//   messagingSenderId: "1061484575966",
-//   appId: "1:1061484575966:web:aa64ca4abab6205f39964f",
-//   measurementId: "G-C0TQH9EQWT"
-// };
+
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_DTX_FIREBASE_API_KEY,

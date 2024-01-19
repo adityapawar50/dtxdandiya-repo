@@ -89,17 +89,18 @@ const CurrUpdatesBox = () =>{
           src = {julianpic}
           borderRadius='0'
           objectFit='cover'
-          maxW={{ base: '40%', sm: '200px' }}
+          maxW={{ base: '35%', sm: '200px' }}
           maxH = {{ base: '100%', sm: '100%' }}
         />
 
         <Stack >
           <CardBody  fontSize = {{ base: 'xs', sm: 'sm', md:"md", lg:'lg'}} maxH = {{ base: '80px', sm: '100%' }} >
             <Heading size='lg' color = {palette.dtxGold} textDecoration="underline solid" fontSize = {{ base: 'md',  md:"md", lg:'lg'}}>Currently...</Heading>
-
+            <Flex>
             <Text py='1' color = {palette.dtxGold}>
               {announcement}
             </Text>
+            </Flex>
           </CardBody>
 
           <CardFooter>

@@ -35,7 +35,10 @@ const NavBar = (props) => {
         h = '12%'
     >
       <Box mr="4%" w ={{ base: '70px', sm: '100px' }}>
-        <img src={gtlogo} alt="Logo" h="10px" w = "10px" />
+        <MenuItem to="/">
+              <img src={gtlogo} alt="Logo"  />
+        </MenuItem>
+      
       </Box>
 
       {/* <MenuToggle toggle={toggle} isOpen={isOpen} /> */}
