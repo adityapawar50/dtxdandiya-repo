@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer } from '@chakra-ui/react';
+import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer, Button } from '@chakra-ui/react';
 import UCBRHeader from '../components/UCBRHeader';
 import { palette } from '../styling/theme';
 import TeamAnnouncementBox from '../components/TeamAnnouncement';
@@ -55,6 +55,16 @@ function Team6() {
 </Flex>
 
           </Container>
+          <Button
+                                as="a"
+                                href="https://drive.google.com/drive/u/0/folders/1ya62sQ75ZcUNpeCSBON2IQWtfUmvgg8-"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                color="yellow" bg="blue"
+                                mt="4"
+                            >
+                                Tech Time Videos!
+                            </Button>
     </VStack>
     <Footer/>
   </Flex>

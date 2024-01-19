@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer } from '@chakra-ui/react';
+import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer, Button } from '@chakra-ui/react';
 import MWHeader from '../components/MWHeader';
 import { palette } from '../styling/theme';
 import hero_p3 from '../pics/hero_p3.png';
@@ -61,6 +61,16 @@ function Team3() {
 
 
           </Container>
+          <Button
+                                as="a"
+                                href="https://drive.google.com/drive/u/0/folders/1c6RhtqYDDakO5twYzTPZrn_THEwsR7is"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                color="yellow" bg="blue"
+                                mt="4"
+                            >
+                                Tech Time Videos!
+                            </Button>
     </VStack>
     <Footer/>
   </Flex>

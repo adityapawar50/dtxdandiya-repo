@@ -10,19 +10,20 @@ import {
   TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
+import { palette } from '../styling/theme';
 
 const ResourcesTable = ({ data }) => {
   return (
     <TableContainer>
-      <Table variant="simple" size={{ base: "sm", md: "lg", lg: "lg" }}border="4px" borderColor="white" borderCollapse="separate" borderSpacing="0 10px">
-        <TableCaption placement="top" color="white">
+      <Table variant="simple" size={{ base: "sm", md: "lg", lg: "lg" }} colorScheme={palette.dtxGold}>
+        <TableCaption placement="top" color="palette.dtxGold">
           Quick Contact
         </TableCaption>
-        <Thead color="white">
+        <Thead color={palette.dtxGold} bg = {palette.dtxGold}>
           <Tr>
-            <Th color="white" textAlign="center" >Position</Th>
-            <Th color="white" textAlign="center" >Name</Th>
-            <Th color="white" textAlign="center" >Phone Number</Th>
+            <Th color={palette.bgDarkGreen} textAlign="center" >Position</Th>
+            <Th color={palette.bgDarkGreen} textAlign="center" >Name</Th>
+            <Th color={palette.bgDarkGreen} textAlign="center" >Phone Number</Th>
           </Tr>
         </Thead>
         <Tbody>

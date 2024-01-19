@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer } from '@chakra-ui/react';
+import { Container, Box, Flex, VStack, Text, Heading, UnorderedList, ListItem, Grid, GridItem, Spacer, Button } from '@chakra-ui/react';
 import GTHeader from '../components/GTHeader';
 import { palette } from '../styling/theme';
 import TeamAnnouncementBox from '../components/TeamAnnouncement';
@@ -15,11 +15,6 @@ function Team2() {
         <Container maxW="container.xl" bg={palette.bgDarkGreen} minHeight="90vh">
           
           <Flex direction="column" w="100%" bg={palette.bgDarkGreen}>
-          <Flex minH = '70px' p="4" textDecoration="underline" marginTop={10} borderColor={palette.dtxGold} align="center" justify="center">
-                    <Heading as="h2" size="lg" mb="2" color="orange.500">
-                      
-                    </Heading>
-                  </Flex>
 
             <Flex p="4"  marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
                 <Heading as="h2" size="lg" mb="2" color="yellow.400">
@@ -56,7 +51,16 @@ function Team2() {
     <Schedule scheduleName={"schedulegt"}/>
   </Flex>
 </Flex>
-
+<Button
+                                as="a"
+                                href="https://drive.google.com/drive/u/0/folders/128tBPoWoBsORgYEocO8ToJQFDHBkhYUZ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                color="white" bg="yellow.400"
+                                mt="4"
+                            >
+                                Tech Time Videos!
+                            </Button>
           </Container>
     </VStack>
     <Footer/>

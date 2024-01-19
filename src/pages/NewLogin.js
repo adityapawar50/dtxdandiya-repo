@@ -114,7 +114,7 @@ function NewLogin() {
     </Heading>
     <InputGroup size="md">
     <Input
-      placeholder="passcode 🦛"
+      placeholder="passcode 🦁"
       variant="filled"
       mb={6}
       focusBorderColor={palette.dtxGold}
