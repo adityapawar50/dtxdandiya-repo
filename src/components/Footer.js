@@ -26,7 +26,7 @@ const SimpleFooter = () => {
     return (
         <footer>
             <Flex mb = "4" h="90px" mt = "80px" direction={['column', 'column', 'row']} w="full" px={6} align="center" bg={palette.bgDarkGreen}>
-                <Heading color = {palette.dtxGold}  size="xs">DTX Dandiya</Heading>
+                <Heading color = {palette.dtxGold}  size="xs">Made with ❤️ by DTX Dandiya</Heading>
                 <Spacer />
                 <Text color = {palette.dtxGold} fontSize="xs">Copyright &copy; {new Date().getFullYear()} DTX Dandiya</Text>
                 <Spacer />

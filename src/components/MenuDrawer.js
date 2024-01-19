@@ -72,7 +72,7 @@ const MenuDrawer = () => {
                 <ChakraLink as={RouterLink} to="/resources">
                   <Button colorScheme="transparent" to="/" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl" mr = "auto">Resources </Button>
                 </ChakraLink>
-                <ChakraLink as={RouterLink} to="/portal">
+                <ChakraLink as={RouterLink} to="/teamportal">
                   <Button colorScheme="transparent" to="/" color = {palette.dtxGold} mx="1" size = "md" fontSize="xl" mr = "auto">Team Portal </Button>
                 </ChakraLink>
             
