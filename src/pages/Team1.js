@@ -46,23 +46,8 @@ function Team1() {
                   </UnorderedList>
                  </Flex>
 
-  {/* Announcements Section */}
-  <Flex direction="column"  p="3" mt="2" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} borderColor={palette.dtxGold } align="center" justify="center">
-    <Heading as="h2" size="md" mb="" color="white">
-    📍Schedule📍
-    </Heading>
-    <Schedule scheduleName={"scheduledsd"}/>
+  
 
-  </Flex>
-</Flex>
-
-
-              </Container>
-
-        </VStack>
-        <Footer/>
-      </Flex>
-                        {/* Announcements Section */}
                         <Flex direction="column" p="6" mt="2" borderWidth="4px" borderRadius="lg" borderStyle={"solid"} borderColor={palette.dtxGold} align="center" justify="center">
                             <Heading as="h2" size="md" mb="2" color="white">
                                 📍Schedule📍

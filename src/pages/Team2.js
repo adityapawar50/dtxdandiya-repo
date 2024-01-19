@@ -16,7 +16,7 @@ function Team2() {
           
           <Flex direction="column" w="100%" bg={palette.bgDarkGreen}>
 
-            <Flex p="4"  marginTop={5} borderColor={palette.dtxGold} align="center" justify="center">
+            <Flex p="4"  marginTop={'120px'} borderColor={palette.dtxGold} align="center" justify="center">
                 <Heading as="h2" size="lg" mb="2" color="yellow.400">
                   Welcome GT Ramblin Raas!
                 </Heading>
