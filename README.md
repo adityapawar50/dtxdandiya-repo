@@ -1,5 +1,4 @@
-Yo what's goodie. It's me Rishi (the greatest of all time, super hot/smart/incredible dancer/techwiz/etc.), and Aditya (Giants fan). 
-We made the website. I am an intern. Live, Love, Laugh, Kanye. Gang shi no lame shit. Opium. Ts.
+Welcome to DTX Dandiya, Dallas's premier Garba / Raas National competition. This website is the first step in introducing DTX Dandiya's revival as a fresh competition that is just as competitive, fierce, and capable as any other in the circuit, if not more. 
 __________________________________________________________________________________________________________________________________________
 # Getting Started with Create React App
 
