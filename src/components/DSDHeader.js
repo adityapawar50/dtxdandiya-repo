@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Box, Flex, Text, Button,MenuButton, Stack, Select, } from "@chakra-ui/react";
 import { palette } from '../styling/theme';
-import dsdlogo from '../pics/orangelogo.png'
+import dsdlogo from '../pics/texasRaasLogo.png'
 import instaIcon from "../pics/instagram.png"
 import tiktokIcon from "../pics/tiktok.png"
 import MenuDrawer from "./MenuDrawer";
