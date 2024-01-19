@@ -4,6 +4,7 @@ import { Box, Flex, VStack, Text, HStack,Wrap } from "@chakra-ui/react";
 import ResourcesTable from "../components/ResourcesTable";
 import { palette } from '../styling/theme';
 import Header from '../components/Header';
+import Footer from '../components/Footer'
 
 const Resources = () => {
   const execData = [
@@ -18,11 +19,13 @@ const Resources = () => {
     { boardPosition: "Tech", name: "Rishil Uppaluru", phoneNumber: "512-521-9355" },
     { boardPosition: "Tech", name: "Aditya Pawar", phoneNumber: "214-469-8074" },
   ];
+
+
   return (
     <Box bg={palette.bgDarkGreen} w="100%" overflowX="auto" minHeight="100vh">
       <Flex direction="column" align="center" justify="flex-end" height="100%">
         <Header />
-        <VStack spacing="70px" align="center" color="white" mt="150" >
+        <VStack spacing="70px" align="center" color={palette.dtxGold} mt="150">
           {/* Resources Table with added margin-bottom */}
           <VStack spacing="20px" align="center" style={{ marginBottom: "20px" }}>
             {/* Add a spacer to push the table to the bottom */}
@@ -32,38 +35,64 @@ const Resources = () => {
 
           {/* Nearby Restaurants and Nearby Facilities */}
           <Wrap spacing="4" justify="center">
-            {/* Nearby Restaurants */}
-            <Box w="40%" p="4" border="2px" borderRadius="lg" borderColor="white">
-              <Text fontSize="xl" fontWeight="bold" >
-                Nearby Restaurants
+            {/* Nearby Facilities */}
+            <Box
+              w={{ base: "80%", md: "40%" }} // Set width to 80% on small screens, and 40% on medium screens and larger
+              p="4"
+              border="2px"
+              borderRadius="lg"
+              borderColor={palette.dtxGold}
+            >
+              <Text fontSize="xl" fontWeight="bold">
+                Nearby Facilities
               </Text>
               <ul>
                 <li>Pappasitos Cantina</li>
                 <li>Boomer Jacks</li>
-                <li>Chillis Grill and Bar</li>
+                <li>Homedepot</li>
+                <li>Six Flags</li>
               </ul>
             </Box>
 
+            {/* AP Information */}
             <Box
-              w="40%"
+              w={{ base: "80%", md: "40%" }}
               p="4"
               border="2px"
               borderRadius="lg"
-              borderColor="white"
-              ml="18"  // Adjust this margin-left value for the desired space
+              borderColor={palette.dtxGold}
             >
-              <Text fontSize="xl" fontWeight="bold" mb="2">
-                Nearby Facilities
+              <Text fontSize="xl" fontWeight="bold">
+                AP Information
               </Text>
               <ul>
-                <li>Home Depot</li>
-                <li>Six Flags</li>
-                <li>Lincoln Square</li>
+                <li>Location: FireHouse Gastro Park - 321 W Main St, Grand Prairie, TX 75050 </li>
+                <li>Required to Bring: NFC Bands (Admission), IDs to drink, etc. </li>
+                <li>Your best dance moves 🕺🏼💃🏻 </li>
+              </ul>
+            </Box>
+
+            {/* Things to Remember */}
+            <Box
+              w={{ base: "80%", md: "40%" }}
+              p="4"
+              border="2px"
+              borderRadius="lg"
+              borderColor={palette.dtxGold}
+            >
+              <Text fontSize="xl" fontWeight="bold">
+                Things to Remember
+              </Text>
+              <ul>
+                <li> NFC Bands CANNOT get wet </li>
+                <li> Frequently check your team portal for announcements from Board </li>
+                <li> Be respectful to dancers, liasons, staff, and participants alike. </li>
               </ul>
             </Box>
           </Wrap>
         </VStack>
       </Flex>
+      <Footer/>
     </Box>
   );
 };
